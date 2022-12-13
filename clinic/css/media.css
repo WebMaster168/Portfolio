@@ -1,0 +1,128 @@
+
+@media(max-width:928px){
+    ul{
+        display: none;
+    }
+    .menu-btn{
+        display: block;
+    }
+    .menu-list{
+        position: absolute;
+        text-align: center;
+        border:2px solid #4570d2;
+        border-radius: 3px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 5px;
+        margin-left: -37px;
+        margin-top: 18px;
+        background-color: white;
+    }
+    .menu-list li{
+        margin-right: 0;
+        margin-top: 5px;
+    }
+}
+@media(max-width:564px){
+    nav{
+        margin-left: -211px;
+    }
+}
+@media(max-width:376px){
+    
+    .header__inner{
+        max-width:370px;
+        display: block;
+    }
+}
+@media(max-width:368px){
+    .header__inner{
+        position: relative;
+    }
+    .logo {
+        padding-right: 145px;
+    }
+    nav{
+        margin-left: -139px;
+    }
+}
+@media(max-width:1178px){
+    img{
+        max-width: 100%;
+    }
+    .about__us-inner{
+        display: block;
+    }
+    #photo-two {
+        top: 742px;
+    }
+    #photo-two
+    {
+       
+        top: 780px;
+    }
+    .photo-two2{
+        margin-top: 41px;
+    }
+    .about__us-block1{
+        margin-left: 46px;
+    }
+}
+@media(max-width:974px){
+    #photo-two {
+        top: 810px;
+    }
+}
+@media(max-width:708px){
+    #photo-two {
+        top: 843px;
+    }
+}
+@media(max-width:610px){
+    .sloy,
+    .photo-two2{
+        display: none;
+    }
+    .about__us-info-inner{
+        margin-top: 663px;
+    }
+    .about__us-block1 {
+        margin-left: 0;
+    }
+    .about__us-block2 {
+        margin-left: 0;
+    }
+}
+@media(max-width:394px){
+    h3{
+        margin-top: 40px;
+    }
+}
+@media(max-width:1230px){
+    .services-items{
+        display: block;
+        max-width: 300px;
+        margin:0 auto;
+    }
+}
+@media(max-width:1040px){
+    .footer__inner{
+        display: block;
+    }
+    .logo02{
+        text-align: center;
+        justify-content: center;
+    }
+    .operating_mode{
+        display: block;
+    }
+    .operating_mode {
+    margin-left: 0; 
+    text-align: center;
+}
+.telephone02 {
+    margin-left: 0px; 
+    max-width: 175px;
+    margin: 0 auto;
+}
+}
