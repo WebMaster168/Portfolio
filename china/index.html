@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>  
+    <header class="header">    
+        <div class="container">
+            <div class="header__top">
+                <div class="header__top-left">
+                    <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
+                    <p class="logo__text">Онлайн-школа китайского языка</p>
+                </div>
+                <div class="header__top-right">
+                    <a href="#">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.1406 14.9813C17.8302 14.8261 16.3083 14.0782 16.025 13.974C15.7417 13.8709 15.5354 13.8198 15.3281 14.1302C15.1219 14.4386 14.5292 15.1365 14.349 15.3428C14.1677 15.55 13.9875 15.575 13.6781 15.4209C13.3688 15.2646 12.3708 14.9386 11.1885 13.8844C10.2688 13.0636 9.64688 12.05 9.46667 11.7396C9.28646 11.4303 9.44688 11.2625 9.60208 11.1084C9.74167 10.9698 9.91146 10.7469 10.0667 10.5667C10.2219 10.3855 10.2729 10.2563 10.376 10.049C10.4802 9.84275 10.4281 9.66254 10.35 9.50733C10.2729 9.35213 9.65417 7.82817 9.39583 7.20838C9.14479 6.60525 8.88958 6.68754 8.7 6.67713C8.51875 6.66879 8.3125 6.66671 8.10625 6.66671C7.9 6.66671 7.56458 6.74379 7.28125 7.05421C6.99688 7.36358 6.19792 8.11254 6.19792 9.6365C6.19792 11.1594 7.30625 12.6313 7.46146 12.8386C7.61667 13.0448 9.64375 16.1719 12.749 17.5125C13.4885 17.8313 14.0646 18.0219 14.5135 18.1636C15.2552 18.4 15.9302 18.3667 16.4635 18.2865C17.0573 18.198 18.2948 17.5375 18.5531 16.8146C18.8104 16.0917 18.8104 15.4719 18.7333 15.3428C18.6562 15.2136 18.45 15.1365 18.1396 14.9813H18.1406ZM12.4927 22.6927H12.4885C10.6442 22.6931 8.83372 22.1973 7.24688 21.2573L6.87188 21.0344L2.97396 22.0573L4.01458 18.2573L3.76979 17.8678C2.73869 16.2264 2.19302 14.3269 2.19583 12.3886C2.19792 6.7115 6.81667 2.09275 12.4969 2.09275C15.2469 2.09275 17.8323 3.16567 19.776 5.1115C20.7348 6.06627 21.4947 7.20167 22.0117 8.45202C22.5288 9.70236 22.7929 11.0428 22.7885 12.3959C22.7865 18.073 18.1677 22.6927 12.4927 22.6927ZM21.2552 3.63338C20.1075 2.47809 18.7419 1.56206 17.2376 0.938376C15.7333 0.314692 14.1201 -0.00424609 12.4917 4.26849e-05C5.66458 4.26849e-05 0.10625 5.55733 0.104167 12.3875C0.103125 14.5709 0.672917 16.7021 1.75729 18.5802L0 25L6.56667 23.2771C8.3832 24.2668 10.4188 24.7854 12.4875 24.7855H12.4927C19.3198 24.7855 24.8781 19.2282 24.8802 12.3969C24.8852 10.7691 24.5675 9.1564 23.9452 7.65216C23.323 6.14792 22.4087 4.78199 21.2552 3.63338Z" fill="url(#paint0_linear_1551:65)"/>
+                            <defs>
+                            <linearGradient id="paint0_linear_1551:65" x1="12.4401" y1="0" x2="12.4401" y2="25" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#494596"/>
+                            <stop offset="1" stop-color="#312C98"/>
+                            </linearGradient>
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.432416 11.1292L6.54596 14.2979C6.78241 14.4193 7.06158 14.4106 7.28762 14.273L12.7293 10.9829L9.43554 14.0184C9.26783 14.1734 9.172 14.3944 9.172 14.6273V22.021C9.172 22.801 10.1293 23.1293 10.5782 22.5096L13.221 18.8555L19.7564 22.7263C20.2147 23.0004 20.8022 22.7252 20.9085 22.1803L24.9845 1.05527C25.1064 0.420439 24.4991 -0.0973938 23.9345 0.138773L0.496999 9.64502C-0.132168 9.90069 -0.172793 10.8161 0.432416 11.1292ZM23.172 2.19277L19.5897 20.7579L13.397 17.0897C13.0595 16.8893 12.6251 16.9781 12.3855 17.3074L10.7345 19.59V14.9924L19.6418 6.78502C20.347 6.13611 19.5366 4.98236 18.7314 5.47419L6.86679 12.648L2.70846 10.4933L23.172 2.19277Z" fill="#494596"/>
+                        </svg>
+                            
+                    </a>
+                    <a href="tel:+79526418687" class="header__top-number">+7 (952) 641 86-87</a>
+                    <div class="header__btn">
+                       <span> меню</span>
+                        <div class="header__btn-decor">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__content">
+                <div class="header__content-text">
+                    <h1 class="header__content-title _anim-items">
+                        Самое увлекательное<br>
+                        обучение вашего ребенка<br> 
+                       <span>китайскому языку</span>
+                    </h1>
+                    <p class="header__content-subtitle _anim-items">
+                        Влюбляем ваших детей в самый перспективный
+                        язык мира уже с первых уроков в легком, интересном формате
+                    </p>
+                </div>
+                <div class="header__content-image _anim-items">
+                    <img class="_anim-items" src="images/girl.png" alt="">
+                    <a data-btn__play class="header__content-play" href="#"><svg width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.51625 0.956076C1.82294 0.798149 2.16725 0.727892 2.5113 0.753034C2.85534 0.778176 3.18578 0.897742 3.46625 1.09858L16.5913 10.4736C16.8343 10.647 17.0324 10.876 17.1691 11.1415C17.3058 11.407 17.3771 11.7012 17.3771 11.9998C17.3771 12.2984 17.3058 12.5927 17.1691 12.8582C17.0324 13.1236 16.8343 13.3526 16.5913 13.5261L3.46625 22.9011C3.18588 23.1017 2.8556 23.2212 2.51173 23.2464C2.16786 23.2715 1.82372 23.2013 1.51714 23.0436C1.21056 22.8858 0.953408 22.6466 0.773962 22.3522C0.594516 22.0578 0.499721 21.7196 0.500001 21.3748V2.62483C0.49964 2.28014 0.594302 1.94202 0.773586 1.64762C0.95287 1.35322 1.20984 1.11394 1.51625 0.956076Z" fill="#EC671A"/>
+                        </svg></a>
+                </div>
+            </div>
+            <div class="header__programms">
+                <div class="header__programms-block">
+                    <div class="header__programms-item">
+                        <div class="header__programms-image">
+                            <img src="images/icons/icon-1.png" alt="">
+                        </div>
+                        <div class="header__programms-description">
+                           <span>Китайский с нуля</span><br>
+                            для детей от 4-х лет
+                        </div>
+                    </div>
+                    <div class="header__programms-item">
+                        <div class="header__programms-image">
+                            <img src="images/icons/icon-2.png" alt="">
+                        </div>
+                        <div class="header__programms-description">
+                            Китайский <span>для<br>
+                            продолжающих</span> 
+                        </div>
+                    </div>
+                    <div class="header__programms-item">
+                        <div class="header__programms-image">
+                            <img src="images/icons/icon-3.png" alt="">
+                        </div>
+                        <div class="header__programms-description">
+                           Блок <span>фонетика<br>
+                            и иероглифика</span> 
+                        </div>
+                    </div>
+                </div>
+                <div class="header__programms-lesson">
+                    <p>Пробный урок<br>
+                       <span>бесплатно</span></p>
+                    <input data-btn__lesson type="button" value="Записаться!">
+                </div>
+                <div class="header__decor">
+                    <img src="images/Polygon.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="modal-play">
+        <div class="modal__dialog">
+            <div class="modal-play__content">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5KJn3yA7VxY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="modal__close">
+               <p class="close"> + </p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-lesson">
+        <div class="modal__dialog--lesson">
+            <div class="modal-lesson__content">
+                <div class="modal__desc">
+                    <div class="modal-lesson__title">
+                        Пробный урок
+                    </div>
+                    <form action="" class="modal__form">
+                        <input type="text" placeholder="Имя">
+                        <input type="text" placeholder="Телефон">
+                        <input type="text" placeholder="E-mail">
+                    </form>
+                    <button class="modal__btn">Пройти</button>
+                    <div class="checkbox">
+                        <input type="checkbox" name="" id="checkbox-1">
+                        <label class="checkbox__label" for="checkbox-1">Согласен на обработку <span> персональных данных</span></label>
+                    </div>
+                </div>
+                <div class="modal__image">
+                    <img src="images/girl-3.png" alt="">
+                </div>
+                <div class="modal__close--lesson">
+                    <p class="close"> + </p>
+                 </div>
+                 
+            </div>
+            
+        </div>
+    </div>
+    <div class="menu">
+        <div class="menu__close">
+            <p>меню</p>
+            <p class="menu__close-deg">+</p>
+        </div>
+        <nav class="menu__navigation">
+            <div class="menu__title">
+                Меню
+            </div>
+            <ul class="menu__list">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Почему я?</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="#">Наши курсы</a></li>
+                <li><a href="#">Преподаватели</a></li>
+                <li><a href="#">Набор китаиста</a></li>
+                <li><a href="#">Вопросы</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="menu__block">
+            <div class="menu__title">
+                Контакты
+            </div>
+            <div class="menu__regim">
+                <p>Пн-Пт с 10:00 до 19:00 </p>
+                <a href="#">+7(952) 641 86 87</a>
+            </div>
+            <div class="menu__questions">
+                <p>Задайте вопрос, мы онлайн </p>
+                <div class="menu__links">
+                    <a href="#">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.1406 14.9813C17.8302 14.8261 16.3083 14.0782 16.025 13.974C15.7417 13.8709 15.5354 13.8198 15.3281 14.1302C15.1219 14.4386 14.5292 15.1365 14.349 15.3428C14.1677 15.55 13.9875 15.575 13.6781 15.4209C13.3688 15.2646 12.3708 14.9386 11.1885 13.8844C10.2688 13.0636 9.64688 12.05 9.46667 11.7396C9.28646 11.4303 9.44688 11.2625 9.60208 11.1084C9.74167 10.9698 9.91146 10.7469 10.0667 10.5667C10.2219 10.3855 10.2729 10.2563 10.376 10.049C10.4802 9.84275 10.4281 9.66254 10.35 9.50733C10.2729 9.35213 9.65417 7.82817 9.39583 7.20838C9.14479 6.60525 8.88958 6.68754 8.7 6.67713C8.51875 6.66879 8.3125 6.66671 8.10625 6.66671C7.9 6.66671 7.56458 6.74379 7.28125 7.05421C6.99688 7.36358 6.19792 8.11254 6.19792 9.6365C6.19792 11.1594 7.30625 12.6313 7.46146 12.8386C7.61667 13.0448 9.64375 16.1719 12.749 17.5125C13.4885 17.8313 14.0646 18.0219 14.5135 18.1636C15.2552 18.4 15.9302 18.3667 16.4635 18.2865C17.0573 18.198 18.2948 17.5375 18.5531 16.8146C18.8104 16.0917 18.8104 15.4719 18.7333 15.3428C18.6562 15.2136 18.45 15.1365 18.1396 14.9813H18.1406ZM12.4927 22.6927H12.4885C10.6442 22.6931 8.83372 22.1973 7.24688 21.2573L6.87188 21.0344L2.97396 22.0573L4.01458 18.2573L3.76979 17.8678C2.73869 16.2264 2.19302 14.3269 2.19583 12.3886C2.19792 6.7115 6.81667 2.09275 12.4969 2.09275C15.2469 2.09275 17.8323 3.16567 19.776 5.1115C20.7348 6.06627 21.4947 7.20167 22.0117 8.45202C22.5288 9.70236 22.7929 11.0428 22.7885 12.3959C22.7865 18.073 18.1677 22.6927 12.4927 22.6927ZM21.2552 3.63338C20.1075 2.47809 18.7419 1.56206 17.2376 0.938376C15.7333 0.314692 14.1201 -0.00424609 12.4917 4.26849e-05C5.66458 4.26849e-05 0.10625 5.55733 0.104167 12.3875C0.103125 14.5709 0.672917 16.7021 1.75729 18.5802L0 25L6.56667 23.2771C8.3832 24.2668 10.4188 24.7854 12.4875 24.7855H12.4927C19.3198 24.7855 24.8781 19.2282 24.8802 12.3969C24.8852 10.7691 24.5675 9.1564 23.9452 7.65216C23.323 6.14792 22.4087 4.78199 21.2552 3.63338Z" fill="url(#paint0_linear_1551:65)"/>
+                            <defs>
+                            <linearGradient id="paint0_linear_1551:65" x1="12.4401" y1="0" x2="12.4401" y2="25" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#494596"/>
+                            <stop offset="1" stop-color="#312C98"/>
+                            </linearGradient>
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.432416 11.1292L6.54596 14.2979C6.78241 14.4193 7.06158 14.4106 7.28762 14.273L12.7293 10.9829L9.43554 14.0184C9.26783 14.1734 9.172 14.3944 9.172 14.6273V22.021C9.172 22.801 10.1293 23.1293 10.5782 22.5096L13.221 18.8555L19.7564 22.7263C20.2147 23.0004 20.8022 22.7252 20.9085 22.1803L24.9845 1.05527C25.1064 0.420439 24.4991 -0.0973938 23.9345 0.138773L0.496999 9.64502C-0.132168 9.90069 -0.172793 10.8161 0.432416 11.1292ZM23.172 2.19277L19.5897 20.7579L13.397 17.0897C13.0595 16.8893 12.6251 16.9781 12.3855 17.3074L10.7345 19.59V14.9924L19.6418 6.78502C20.347 6.13611 19.5366 4.98236 18.7314 5.47419L6.86679 12.648L2.70846 10.4933L23.172 2.19277Z" fill="#494596"/>
+                        </svg>
+                            
+                    </a>
+                </div>
+            </div>
+            <div class="menu__children">
+                <p>Для детей</p>
+                <div class="menu__links">
+                    <a href="#">
+                        <svg width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1546_24)">
+                        <path d="M30.9696 9.40809C30.897 7.7078 30.6307 6.53888 30.2491 5.52598C29.8555 4.45082 29.2499 3.48823 28.4565 2.68802C27.6813 1.87537 26.7426 1.2439 25.7131 0.843915C24.7262 0.450039 23.5997 0.175083 21.9526 0.100117C20.2931 0.0188025 19.7663 0 15.5575 0C11.3486 0 10.8218 0.0188025 9.16852 0.0937683C7.52138 0.168734 6.38898 0.443934 5.40797 0.837566C4.36617 1.2439 3.43366 1.86902 2.65847 2.68802C1.8712 3.48823 1.2597 4.45717 0.871985 5.51988C0.490419 6.53888 0.224055 7.70146 0.151432 9.40174C0.0726583 11.1147 0.0544434 11.6585 0.0544434 16.0031C0.0544434 20.3477 0.0726583 20.8915 0.145281 22.5982C0.217904 24.2984 0.484505 25.4674 0.866071 26.4803C1.2597 27.5554 1.8712 28.518 2.65847 29.3182C3.43366 30.1309 4.37232 30.7624 5.40182 31.1623C6.38898 31.5562 7.51522 31.8312 9.16261 31.9061C10.8157 31.9813 11.3427 31.9999 15.5515 31.9999C19.7604 31.9999 20.2872 31.9813 21.9405 31.9061C23.5876 31.8312 24.72 31.5562 25.701 31.1623C27.7844 30.3309 29.4316 28.6306 30.237 26.4803C30.6184 25.4613 30.885 24.2984 30.9576 22.5982C31.0302 20.8915 31.0484 20.3477 31.0484 16.0031C31.0484 11.6585 31.0423 11.1147 30.9696 9.40809ZM28.178 22.4731C28.1113 24.0359 27.857 24.8799 27.6451 25.4425C27.1242 26.8365 26.0523 27.943 24.7018 28.4807C24.1568 28.6995 23.3333 28.962 21.8253 29.0306C20.1902 29.1058 19.6998 29.1243 15.5636 29.1243C11.4274 29.1243 10.9309 29.1058 9.30171 29.0306C7.78774 28.962 6.9702 28.6995 6.42517 28.4807C5.75311 28.2243 5.14137 27.8179 4.64484 27.2866C4.13009 26.7677 3.73646 26.1426 3.48807 25.4488C3.27612 24.8862 3.02182 24.0359 2.95535 22.4795C2.88249 20.7917 2.86451 20.2852 2.86451 16.0156C2.86451 11.7459 2.88249 11.2334 2.95535 9.55192C3.02182 7.98911 3.27612 7.14519 3.48807 6.58258C3.73646 5.8886 4.13009 5.25737 4.65099 4.74458C5.15344 4.21323 5.75902 3.8069 6.43132 3.55074C6.97635 3.33195 7.80004 3.06945 9.30786 3.00059C10.9429 2.92562 11.4336 2.90682 15.5695 2.90682C19.7119 2.90682 20.2023 2.92562 21.8314 3.00059C23.3454 3.06945 24.1629 3.33195 24.708 3.55074C25.38 3.8069 25.9918 4.21323 26.4883 4.74458C27.0031 5.26348 27.3967 5.8886 27.6451 6.58258C27.857 7.14519 28.1113 7.99521 28.178 9.55192C28.2507 11.2397 28.2689 11.7459 28.2689 16.0156C28.2689 20.2852 28.2507 20.7853 28.178 22.4731Z" fill="url(#paint0_linear_1546_24)"/>
+                        <path d="M15.5575 7.78271C11.161 7.78271 7.59399 11.4646 7.59399 16.0031C7.59399 20.5416 11.161 24.2234 15.5575 24.2234C19.9541 24.2234 23.5209 20.5416 23.5209 16.0031C23.5209 11.4646 19.9541 7.78271 15.5575 7.78271ZM15.5575 21.3354C12.7053 21.3354 10.3918 18.9475 10.3918 16.0031C10.3918 13.0586 12.7053 10.6707 15.5575 10.6707C18.4099 10.6707 20.7232 13.0586 20.7232 16.0031C20.7232 18.9475 18.4099 21.3354 15.5575 21.3354Z" fill="url(#paint1_linear_1546_24)"/>
+                        <path d="M25.6953 7.45765C25.6953 8.51743 24.8628 9.37673 23.8359 9.37673C22.8093 9.37673 21.9768 8.51743 21.9768 7.45765C21.9768 6.39763 22.8093 5.53857 23.8359 5.53857C24.8628 5.53857 25.6953 6.39763 25.6953 7.45765Z" fill="url(#paint2_linear_1546_24)"/>
+                        </g>
+                        <defs>
+                        <linearGradient id="paint0_linear_1546_24" x1="15.5514" y1="0" x2="15.5514" y2="31.9999" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#494596"/>
+                        <stop offset="1" stop-color="#312C98"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_1546_24" x1="15.5575" y1="7.78271" x2="15.5575" y2="24.2234" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#494596"/>
+                        <stop offset="1" stop-color="#312C98"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_1546_24" x1="23.836" y1="5.53857" x2="23.836" y2="9.37673" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#494596"/>
+                        <stop offset="1" stop-color="#312C98"/>
+                        </linearGradient>
+                        <clipPath id="clip0_1546_24">
+                        <rect width="31" height="32" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.432416 11.1292L6.54596 14.2979C6.78241 14.4193 7.06158 14.4106 7.28762 14.273L12.7293 10.9829L9.43554 14.0184C9.26783 14.1734 9.172 14.3944 9.172 14.6273V22.021C9.172 22.801 10.1293 23.1293 10.5782 22.5096L13.221 18.8555L19.7564 22.7263C20.2147 23.0004 20.8022 22.7252 20.9085 22.1803L24.9845 1.05527C25.1064 0.420439 24.4991 -0.0973938 23.9345 0.138773L0.496999 9.64502C-0.132168 9.90069 -0.172793 10.8161 0.432416 11.1292ZM23.172 2.19277L19.5897 20.7579L13.397 17.0897C13.0595 16.8893 12.6251 16.9781 12.3855 17.3074L10.7345 19.59V14.9924L19.6418 6.78502C20.347 6.13611 19.5366 4.98236 18.7314 5.47419L6.86679 12.648L2.70846 10.4933L23.172 2.19277Z" fill="#494596"/>
+                        </svg>
+                            
+                    </a>
+                </div>
+            </div>
+            <div class="menu__children">
+                <p>Для взрослых</p>
+                <div class="menu__links">
+                    <a href="#">
+                        <svg width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1546_24)">
+                        <path d="M30.9696 9.40809C30.897 7.7078 30.6307 6.53888 30.2491 5.52598C29.8555 4.45082 29.2499 3.48823 28.4565 2.68802C27.6813 1.87537 26.7426 1.2439 25.7131 0.843915C24.7262 0.450039 23.5997 0.175083 21.9526 0.100117C20.2931 0.0188025 19.7663 0 15.5575 0C11.3486 0 10.8218 0.0188025 9.16852 0.0937683C7.52138 0.168734 6.38898 0.443934 5.40797 0.837566C4.36617 1.2439 3.43366 1.86902 2.65847 2.68802C1.8712 3.48823 1.2597 4.45717 0.871985 5.51988C0.490419 6.53888 0.224055 7.70146 0.151432 9.40174C0.0726583 11.1147 0.0544434 11.6585 0.0544434 16.0031C0.0544434 20.3477 0.0726583 20.8915 0.145281 22.5982C0.217904 24.2984 0.484505 25.4674 0.866071 26.4803C1.2597 27.5554 1.8712 28.518 2.65847 29.3182C3.43366 30.1309 4.37232 30.7624 5.40182 31.1623C6.38898 31.5562 7.51522 31.8312 9.16261 31.9061C10.8157 31.9813 11.3427 31.9999 15.5515 31.9999C19.7604 31.9999 20.2872 31.9813 21.9405 31.9061C23.5876 31.8312 24.72 31.5562 25.701 31.1623C27.7844 30.3309 29.4316 28.6306 30.237 26.4803C30.6184 25.4613 30.885 24.2984 30.9576 22.5982C31.0302 20.8915 31.0484 20.3477 31.0484 16.0031C31.0484 11.6585 31.0423 11.1147 30.9696 9.40809ZM28.178 22.4731C28.1113 24.0359 27.857 24.8799 27.6451 25.4425C27.1242 26.8365 26.0523 27.943 24.7018 28.4807C24.1568 28.6995 23.3333 28.962 21.8253 29.0306C20.1902 29.1058 19.6998 29.1243 15.5636 29.1243C11.4274 29.1243 10.9309 29.1058 9.30171 29.0306C7.78774 28.962 6.9702 28.6995 6.42517 28.4807C5.75311 28.2243 5.14137 27.8179 4.64484 27.2866C4.13009 26.7677 3.73646 26.1426 3.48807 25.4488C3.27612 24.8862 3.02182 24.0359 2.95535 22.4795C2.88249 20.7917 2.86451 20.2852 2.86451 16.0156C2.86451 11.7459 2.88249 11.2334 2.95535 9.55192C3.02182 7.98911 3.27612 7.14519 3.48807 6.58258C3.73646 5.8886 4.13009 5.25737 4.65099 4.74458C5.15344 4.21323 5.75902 3.8069 6.43132 3.55074C6.97635 3.33195 7.80004 3.06945 9.30786 3.00059C10.9429 2.92562 11.4336 2.90682 15.5695 2.90682C19.7119 2.90682 20.2023 2.92562 21.8314 3.00059C23.3454 3.06945 24.1629 3.33195 24.708 3.55074C25.38 3.8069 25.9918 4.21323 26.4883 4.74458C27.0031 5.26348 27.3967 5.8886 27.6451 6.58258C27.857 7.14519 28.1113 7.99521 28.178 9.55192C28.2507 11.2397 28.2689 11.7459 28.2689 16.0156C28.2689 20.2852 28.2507 20.7853 28.178 22.4731Z" fill="url(#paint0_linear_1546_24)"/>
+                        <path d="M15.5575 7.78271C11.161 7.78271 7.59399 11.4646 7.59399 16.0031C7.59399 20.5416 11.161 24.2234 15.5575 24.2234C19.9541 24.2234 23.5209 20.5416 23.5209 16.0031C23.5209 11.4646 19.9541 7.78271 15.5575 7.78271ZM15.5575 21.3354C12.7053 21.3354 10.3918 18.9475 10.3918 16.0031C10.3918 13.0586 12.7053 10.6707 15.5575 10.6707C18.4099 10.6707 20.7232 13.0586 20.7232 16.0031C20.7232 18.9475 18.4099 21.3354 15.5575 21.3354Z" fill="url(#paint1_linear_1546_24)"/>
+                        <path d="M25.6953 7.45765C25.6953 8.51743 24.8628 9.37673 23.8359 9.37673C22.8093 9.37673 21.9768 8.51743 21.9768 7.45765C21.9768 6.39763 22.8093 5.53857 23.8359 5.53857C24.8628 5.53857 25.6953 6.39763 25.6953 7.45765Z" fill="url(#paint2_linear_1546_24)"/>
+                        </g>
+                        <defs>
+                        <linearGradient id="paint0_linear_1546_24" x1="15.5514" y1="0" x2="15.5514" y2="31.9999" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#494596"/>
+                        <stop offset="1" stop-color="#312C98"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_1546_24" x1="15.5575" y1="7.78271" x2="15.5575" y2="24.2234" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#494596"/>
+                        <stop offset="1" stop-color="#312C98"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_1546_24" x1="23.836" y1="5.53857" x2="23.836" y2="9.37673" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#494596"/>
+                        <stop offset="1" stop-color="#312C98"/>
+                        </linearGradient>
+                        <clipPath id="clip0_1546_24">
+                        <rect width="31" height="32" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.432416 11.1292L6.54596 14.2979C6.78241 14.4193 7.06158 14.4106 7.28762 14.273L12.7293 10.9829L9.43554 14.0184C9.26783 14.1734 9.172 14.3944 9.172 14.6273V22.021C9.172 22.801 10.1293 23.1293 10.5782 22.5096L13.221 18.8555L19.7564 22.7263C20.2147 23.0004 20.8022 22.7252 20.9085 22.1803L24.9845 1.05527C25.1064 0.420439 24.4991 -0.0973938 23.9345 0.138773L0.496999 9.64502C-0.132168 9.90069 -0.172793 10.8161 0.432416 11.1292ZM23.172 2.19277L19.5897 20.7579L13.397 17.0897C13.0595 16.8893 12.6251 16.9781 12.3855 17.3074L10.7345 19.59V14.9924L19.6418 6.78502C20.347 6.13611 19.5366 4.98236 18.7314 5.47419L6.86679 12.648L2.70846 10.4933L23.172 2.19277Z" fill="#494596"/>
+                        </svg>
+                            
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="about">
+        <div class="container">
+            <h2 class="about__title _anim-items">
+                Курс <span>LaoziKids</span> это:
+            </h2>
+            <div class="about__inner"> 
+                <div class="about__item">
+                    <h3 class="about__item-title _anim-items">
+                        Интересно
+                    </h3>
+                    <p class="about__item-description _anim-items">
+                        Интерактивные <span>видеоуроки по 15 минут</span> построены так, что дети учатся с удовольствием, не теряя интерес.
+                    </p>
+                </div>
+                <div class="about__item">
+                    <h3 class="about__item-title _anim-items">
+                        Познавательно
+                    </h3>
+                    <p class="about__item-description _anim-items">
+                      <span>Дети</span> также погружаются <span>и осваивают китайскую культуру и историю,</span> расширяя свой кругозор
+                    </p>
+                </div>
+                <div class="about__item">
+                    <h3 class="about__item-title _anim-items">
+                        Удобно
+                    </h3>
+                    <p class="about__item-description _anim-items">
+                       <span>Доступ к</span> интерактивной платформе и видеоурокам <span>доступен в любое время</span> и на любом устройстве с выходом в интернет
+                    </p>
+                </div>
+                <div class="about__item">
+                    <h3 class="about__item-title _anim-items">
+                        Перспективно
+                    </h3>
+                    <p class="about__item-description _anim-items">
+                      <span>Китайский открывает</span> богатые <span>возможности</span> вашему ребенку. Он осваивает <span>самый перспективный язык мира</span> в легком интересном формате
+                    </p>
+                </div>
+                <div class="about__item">
+                    <h3 class="about__item-title _anim-items">
+                        Интерактивно
+                    </h3>
+                    <p class="about__item-description _anim-items">
+                       <span>Каждый урок приближает к цели:</span> шаг за шагом пройти квест и собрать кусочки растерянного пазла. Вы и ребенок можете видеть прогресс.
+                    </p>
+                </div>
+                <div class="about__item">
+                    <h3 class="about__item-title _anim-items">
+                        Персональная
+                        поддержка 24/7
+                    </h3>
+                    <p class="about__item-description _anim-items">
+                        Для вас работает <span>система поддержки родителей и детей. Вы получаете</span> подробные <span>видео-инструкции и личного куратора</span>, который помогает на всем пути обучения. 
+                    </p>
+                </div>
+            </div>
+            <div class="about__btn">
+                <button>Хочу попробовать</button>
+            </div>
+            <div class="about__line">
+                <img src="images/Line.png" alt="">
+            </div>
+            <div class="about__line-two">
+                <img src="images/Line2.png" alt="">
+            </div>
+            <div class="about__line-three">
+                <img src="images/Line2.png" alt="">
+            </div>
+            <div class="about__line-four">
+                <img src="images/Line2.png" alt="">
+            </div>
+            <div class="about--mobile">
+                <div class="about__line about__line--before">
+                    <img src="images/Line.png" alt="">
+                </div>
+                <div class="about__line-two">
+                    <img src="images/Line2.png" alt="">
+                </div>
+                <div class="about__line-three">
+                    <img src="images/Line2.png" alt="">
+                </div>
+                <div class="about__line-four">
+                    <img src="images/Line2.png" alt="">
+                </div>
+                <div class="about__line about__line--down">
+                    <img src="images/Line.png" alt="">
+                </div>
+            </div>
+            <div class="about__images">
+                <div class="about__images-item _anim-items">
+                    <img src="images/一.png" alt="">
+                </div>
+                <div class="about__images-item _anim-items">
+                    <img src="images/二.png" alt="">
+                </div>
+                <div class="about__images-item _anim-items">
+                    <img src="images/三.png" alt="">
+                </div>
+                <div class="about__images-item _anim-items">
+                    <img src="images/四.png" alt="">
+                </div>
+                <div class="about__images-item _anim-items">
+                    <img src="images/五.png" alt="">
+                </div>
+                <div class="about__images-item _anim-items">
+                    <img src="images/六.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="reviews">
+        <div class="container">
+            <h1 class="reviews__title _anim-items">
+               <span>Отзывы</span> родителей
+            </h1>
+            <div class="reviews__content">
+                <div class="reviews__content-tabs">
+                    <div data-tab="tab-1" class="reviews__tab reviews__tab--active">
+                        Смотрите
+                    </div>
+                    <div data-tab="tab-2" class="reviews__tab">
+                        Читайте
+                    </div>
+                </div>
+                <div class="reviews__inner">
+                    <div id="tab-1" class="reviews__content reviews__look opacity" data-tab-content>
+                        <div class="reviews__look-video">
+                            <iframe width="350" height="187" src="https://www.youtube.com/embed/lwkIyNb8SFQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="reviews__look-video">
+                            <iframe width="350" height="187" src="https://www.youtube.com/embed/9Xv3zFcxLrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="reviews__look-video">
+                            <iframe width="350" height="187" src="https://www.youtube.com/embed/y-F0r_eICbQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="reviews__look-video">
+                            <iframe width="350" height="187" src="https://www.youtube.com/embed/FRv4Rt22afY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="reviews__look-video">
+                            <iframe width="350" height="187" src="https://www.youtube.com/embed/HuC6PsqYIEc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="reviews__look-video">
+                            <iframe width="350" height="187" src="https://www.youtube.com/embed/33lDogZjd7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div id="tab-2" class="reviews__content reviews__read hidden" data-tab-content>
+                        <div data__screenOne class="reviews__item">
+                            <img src="images/icons/1.jpg" alt="">
+                        </div>
+                        <div data__screenTwo class="reviews__item">
+                            <img src="images/icons/2.jpg" alt="">
+                        </div>
+                        <div data__screenThree class="reviews__item">
+                            <img src="images/icons/3.jpg" alt="">
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="reviews__btn">
+                    <button>Присоединиться</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal-item--one">
+        <div class="modal__dialog--one">
+            <div class="modal-item__content">
+                <div class="reviews__item--modal">
+                    <img src="images/icons/1.jpg" alt="">
+                </div>
+            </div>
+            <div class="modal__close--one">
+               <p class="close"> + </p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-item--two">
+        <div class="modal__dialog--one">
+            <div class="modal-item__content">
+                <div class="reviews__item--modal">
+                    <img src="images/icons/2.jpg" alt="">
+                </div>
+            </div>
+            <div class="modal__close--two">
+               <p class="close"> + </p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-item--three">
+        <div class="modal__dialog--one">
+            <div class="modal-item__content">
+                <div class="reviews__item--modal">
+                    <img src="images/icons/3.jpg" alt="">
+                </div>
+            </div>
+            <div class="modal__close--three">
+               <p class="close"> + </p>
+            </div>
+        </div>
+    </div>
+    
+    <section class="services ">
+        <div class="services__decor">
+            <img src="images/icons/Cloud.png" alt="">
+        </div>
+        <div class="container">
+            <h1 class="services__title _anim-items">
+               <span>Попробуйте</span> прямо <span>сейчас</span>
+            </h1>
+            <div class="services__inner">
+                <div class="services__block">
+                    <h2 class="services__block-title _anim-items">
+                       <span>Китайский с нуля</span><br>
+                        для детей от 4-х лет
+                    </h2>
+                    <ul class="services__list">
+                        <li><span>20 игровых видеоуроков</span> с интерактивными заданиями </li>
+                        <li><span>Ежедневная практика по 15-20 минут,</span> которая даёт результаты в разы эффективнее, чем обычные уроки по часу</li>
+                        <li><span>Доступ</span> к интерактивной платформе <span>на 40 дней</span></li>
+                        <li><span>Песни, танцы, зарядки, поделки:</span> не просто изучение языка, а всестороннее развитие ребенка на <span>китайском языке</span></li>
+                        <li>Индивидуальные <span>рабочие тетради</span></li>
+                        <li>Полезные <span>подарочные материалы</span></li>
+                        <li>Подробные <span>инструкции для родителей</span></li>
+                    </ul>
+                </div>
+                <div class="services__block">
+                    <div class="services__photo _anim-items">
+                        <img src="images/icons/photo.jpg" alt="">
+                    </div>
+                    <h2 class="services__block-title services__block-title--size">
+                        В результате ребенок:
+                    </h2>
+                    <ul class="services__list _anim-items services__list--before">
+                        <li>Легко и весело погружаемся в среду китайского языка</li>
+                        <li>Осваивает базовую лексику и произношение</li>
+                        <li>Формирует очень важную привычку - привычку учиться</li>
+                        <li>Расширяет культурные границы</li>
+                        <li>Гордится собой и может похвастаться новыми знаниями</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="services__tutorial">
+                <div class="services__tutorial-btn">
+                    <button>Начать обучение</button>
+                </div>
+                <div class="services__line">
+                    
+                </div>
+                <div class="services__tutorial-prices">
+                    <p class="services__tutorial-top">
+                        Один урок всего 195 ₽ 
+                    </p>
+                    <p class="services__tutorial-center">
+                        3900 ₽
+                    </p>
+                    <p class="services__tutorial-bottom">
+                        5500 ₽
+                    </p>
+                </div>
+            </div>
+            <div class="decor">
+                <img src="images/crug.png" alt="">
+            </div>
+            <div class="services__background">
+                <div class="services__inner services__inner--border">
+                    <div class="services__block">
+                        <h2 class="services__block-title _anim-items">
+                            <span>Китайский</span><br>
+                            для продолжающих
+                            
+                            
+                        </h2>
+                        <ul class="services__list">
+                            <li>Полный курс из <span>120 игровых видеоуроков</span>  с интерактивными заданиям</li>
+                            <li><span>Ежедневная практика по 15-20 минут,</span> которая даёт результаты в разы эффективнее, чем обычные уроки по часу</li>
+                            <li><span>Доступ</span> к интерактивной платформе</li>
+                            <li><span>Песни, танцы, зарядки, поделки:</span> не просто изучение языка, а всестороннее развитие ребенка на <span>китайском языке</span></li>
+                            <li>Индивидуальные <span>рабочие тетради</span></li>
+                            <li>Полезные <span>подарочные материалы</span></li>
+                            <li>Подробные <span>инструкции для родителей</span></li>
+                        </ul>
+                    </div>
+                    <div class="services__block">
+                        <div class="services__photo _anim-items">
+                            <img src="images/icons/photo02.jpg" alt="">
+                        </div>
+                        <h2 class="services__block-title services__block-title--size">
+                            В результате ребенок:
+                        </h2>
+                        <ul class="services__list  services__list--before">
+                            <li>Овладевает разговорным языком, а не отдельным набором слов</li>
+                            <li>Осваивает лексику грамматику и произношение</li>
+                            <li>Умеет писать и читать иероглифы </li>
+                            <li>Знает много о китайской культуре</li>
+                            <li>ГОРДИТСЯ СОБОЙ И МОЖЕТ ПОХВАСТАТЬСЯ НОВЫМИ ЗНАНИЯМИ </li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 class="services__subtitle">Кому подходит курс?</h3>
+                <div class="services__inner">
+                    <ul class="services-list">
+                        
+                        <li>Тем, кто прошел наш курс с нуля</li>
+                        <li>Детям, которые уже пробовали заниматься китайским,<br>
+                            но так и не научились на нем говорить</li>
+                    </ul>
+                    <ul class="services-list _anim-items">
+                        
+                        <li>Тем, кто учит китайский, но есть пробелы в знаниях</li>
+                        <li>Взрослым, которые хотят изучать китайский вместе с их ребенком </li>
+                    </ul>
+                </div>
+                <div class="services__tutorial services__tutorial--text">
+                    <div class="services__tutorial-btn">
+                        <button>Начать обучение</button>
+                    </div>
+                    <div class="services__line">
+                        
+                    </div>
+                    <div class="services__tutorial-prices">
+                        <p class="services__tutorial-top">
+                            Один урок всего 350 ₽ 
+                        </p>
+                        <p class="services__tutorial-center">
+                            42000 ₽
+                        </p>
+                        <p class="services__tutorial-bottom">
+                            48000 ₽
+                        </p>
+                    </div>
+                    <div class="services__text">
+                        связаться с менеджером<br>
+                        по условиям внутренней рассрочки
+                    </div>
+                </div>
+            </div>
+            <div class="elements">
+                <div class="elements-left">
+                    <img src="images/Облачко.png" alt="">
+                </div>
+                <div class="elements-right">
+                    <img src="images/Polygon 5.png" alt="">
+                </div>
+            </div>
+             <div class="services__inner">
+                 <div class="services__block">
+                     <h2 class="services__block-title _anim-items">
+                        
+                        Блок <span>фонетика и </br> иероглифика</span>
+                     </h2>
+                     <ul class="services__list">
+                         <li><span>Осваиваем фонетику</span> китайского языка <span>в легкой форме</span></li>
+                         <li><span>Изучаем правила написания</span> иероглифов и их ключей</li>
+                         <li>Учимся читать <span>китайские иероглифы</span></li>
+                         
+                     </ul>
+                     <h2 class="services__block-title services__block-title--size">
+                        В результате ребенок:
+                    </h2>
+                    <ul class="services__list services__list--before">
+                        <li>Знает все тонкости произношения</li>
+                        <li>Различает 4 китайских тона </li>
+                        <li>Умеет писать и читать иероглифы</li>
+                        
+                    </ul>
+                 </div>
+                 <div class="services__block">
+                     <div class="services__photo _anim-items">
+                         <img src="images/snimok.png" alt="">
+                     </div>
+                     
+                 </div>
+             </div>
+             <div class="services__tutorial">
+                 <div class="services__tutorial-btn">
+                     <button>Начать обучение</button>
+                 </div>
+                 <div class="services__line">
+                     
+                 </div>
+                 <div class="services__tutorial-prices">
+                     <p class="services__tutorial-top services__tutorial-top--width">
+                        -30% 
+                     </p>
+                     <p class="services__tutorial-center">
+                        1900 ₽
+                     </p>
+                     <p class="services__tutorial-bottom">
+                        2500 ₽
+                     </p>
+                 </div>
+             </div>
+        </div>
+    </section>
+    <section class="form">
+        <div class="container">
+            <h1 class="form__title _anim-items">
+                Пройди пробный урок прямо сейчас
+            </h1>
+            <form class="form__inner">
+                <div class="form__name _anim-items form__item">
+                    <input type="text" placeholder="Имя">
+                </div>
+                <div class="form__number _anim-items form__item">
+                    <input type="number" placeholder="Ваш телефон">
+                </div>
+                <div class="form__mail _anim-items form__item">
+                    <input type="text" placeholder="E-mail">
+                </div>
+                <div class="form__btn _anim-items">
+                    <button>Смотреть</button>
+                    <p>Согласен на обработку персональных данных</p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="teachers">
+        <div class="teachers__decor _anim-items">
+            <img src="images/Ресурс 3 1.png" alt="">
+        </div>
+        <div class="teachers__map _anim-items">
+            <img src="images/Ресурс 1 1.png" alt="">
+        </div>
+        <div class="container">
+            <h2 class="teachers__title _anim-items">
+               <span>Кто ведёт</span> курсы? 
+            </h2>
+            <p class="teachers__subtitle _anim-items">
+              <span class="span_anim _anim-items">Таня и Яна, верные друзья вашего ребёнка<br></span>
+               <span class="span__anim _anim-items"> и квалифицированные преподаватели китайского языка </span> 
+
+            </p>
+            <div class="teachers__inner">
+                <div class="teachers__image _anim-items">
+                    <img src="images/Таня фото.png" alt="">
+                </div>
+                <div class="teachers__info">
+                    <h3 class="teachers__name _anim-items">
+                        Таня
+                    </h3>
+                    <ul class="teachers__list _anim-items">
+                        <li><span>4 года обучения</span> в Китае</li>
+                        <li><span>5 лет опыта</span> работы с детьми за рубежом и в России сотни довольных родителей и учеников</li>
+                        <li><span>Обучает говорить</span> на китайском <span>через игру</span>, а не через зубрежку.</li>
+                        <li><span>Результаты говорят сами за себя</span> — дети влюбляются в новый язык и начинают  на нем говорить уже с первых недель обучения</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="teachers__cloud-left _anim-items">
+                <img src="images/Ресурс 2 2.png" alt="">
+            </div>
+            <div class="teachers__inner teachers__inner--end">
+                <div class="teachers__image _anim-items">
+                    <img src="images/Яна Фото.png" alt="">
+                </div>
+                <div class="teachers__info">
+                    <h3 class="teachers__name _anim-items">
+                        Яна
+                    </h3>
+                    <ul class="teachers__list _anim-items">
+                        <li><span>4 года обучения</span> в Китае</li>
+                        <li><span>Опыт преподавания:</span> в Китае; в российских государственных и частных школах; во всероссийском детском лагере «Орленок»</li>
+                        <li>Более <span>800 учеников</span></li>
+                        <li>Более <span>3500 часов преподавания</span></li>
+                        <li>Любовь к своему делу и <span>безумная любовь к китайскому языку</span>, которой хочется делиться</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="teachers__cloud-right _anim-items">
+                <img src="images/Ресурс 2 1.png" alt="">
+            </div>
+            <div class="teachers__btn _anim-items">
+                <button>Присоединиться</button>
+            </div>
+            <div class="teachers__sakura">
+                <img src="images/Сакура 1.png" alt="">
+            </div>
+            <div class="teachers__crug">
+                <img src="images/crug.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="kits">
+        <div class="container">
+            <h2 class="kits__title _anim-items">Приобретай <span>набор</span> юного <span>Китаиста</span></h2>
+            <div class="kits__box">
+                <div class="kits__item">
+                    <div class="kits__item-image _anim-items">
+                        <img src="images/item1.png" alt="">
+                    </div>
+                    <div class="kits__item-info">
+                        <h4 class="kits__item-title _anim-items">
+                            Набор для каллиграфии
+                        </h4>
+                        <p class="kits__item-description _anim-items">
+                            Волшебный многоразовый каллиграфический коврик, который позволяет практиковать прописи иероглифов без чернил.
+                        </p>
+                    </div>
+                </div>
+                <div class="kits__item">
+                    <div class="kits__item-image _anim-items kits__item-image--space">
+                        <img src="images/item2.png" alt="">
+                    </div>
+                    <div class="kits__item-info">
+                        <h4 class="kits__item-title _anim-items">
+                            Авторский набор карточек с озвучкой от носителей
+                        </h4>
+                        <p class="kits__item-description _anim-items">
+                            Яркий, запоминающийся способ тренировать китайские слова и выражения
+                        </p>
+                    </div>
+                </div>
+                <div class="kits__item">
+                    <div class="kits__item-image _anim-items">
+                        <img src="images/item2.png" alt="">
+                    </div>
+                    <div class="kits__item-info">
+                        <h4 class="kits__item-title _anim-items">
+                            Календари и штампы
+                        </h4>
+                        <p class="kits__item-description _anim-items">
+                            Для планирования уроков китайского и отслеживания прогресса
+                        </p>
+                    </div>
+                </div>
+                <div class="kits__item">
+                    <div class="kits__item-image _anim-items">
+                        <img src="images/item3.png" alt="">
+                    </div>
+                    <div class="kits__item-info">
+                        <h4 class="kits__item-title _anim-items">
+                            Персонализированные рабочие тетради 
+                        </h4>
+                        <p class="kits__item-description _anim-items">
+                            С наклейками, которые так любят дети
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services__tutorial services__tutorial--text services__tutorial--margin">
+                <div class="services__tutorial-btn">
+                    <button>Купить набор</button>
+                </div>
+                <div class="services__line">
+                    
+                </div>
+                <div class="services__tutorial-prices">
+                    <p class="services__tutorial-top services__tutorial-top--width">
+                        -30%
+                    </p>
+                    <p class="services__tutorial-center">
+                        2540 ₽
+                    </p>
+                    <p class="services__tutorial-bottom">
+                        3540 ₽
+                    </p>
+                </div>
+                <div class="services__text">
+                    при заказе набора - <span>бесплатная доставка в подарок></span> 
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="questions">
+        <div class="questions__decor">
+            <img src="images/icons/Polygon 6.png" alt="">
+        </div>
+        <div class="container">
+            <h2 class="questions__title _anim-items">
+                Часто задаваемые <span>вопросы</span> 
+            </h2>
+            <p class="questions__subtitle _anim-items">
+                Ниже мы ответим на самые популярные и интересные вопросы,
+                которые задают нам родители.
+            </p>
+            <div class="questions__inner">
+                <div class="questions__image _anim-items">
+                    <img src="images/icons/girl.png" alt="">
+                </div>
+                <div class="questions__accordeon">
+                    <div class="questions__item _anim-items">
+                        <div class="questions__item-title" data-name="questions-accordeon">
+                            А ребёнок поймет без перевода?
+                            <svg class="questions__item-arrow" width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L9 9L17 1" stroke="#030304" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="questions__item-answer">
+                            Уроки выстроены так, что ребёнок понимает язык и осваивает его методом естественного обучения без зубрёжки и долгого перевода с русского на китайский в голове
+                        </div>
+                    </div>
+                    <div class="questions__item _anim-items">
+                        <div class="questions__item-title" data-name="questions-accordeon">
+                            Сколько длится урок?
+                            <svg class="questions__item-arrow" width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L9 9L17 1" stroke="#030304" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="questions__item-answer">
+                            Средняя продолжительность урока 15 минут
+                        </div>
+                    </div>
+                    <div class="questions__item _anim-items">
+                        <div class="questions__item-title" data-name="questions-accordeon">
+                            А если ребёнок не захочет учиться?
+                            <svg class="questions__item-arrow" width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L9 9L17 1" stroke="#030304" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="questions__item-answer">
+                            Формат нашего курса мотивирует ребёнка идти до конца
+                        </div>
+                    </div>
+                    <div class="questions__item _anim-items">
+                        <div class="questions__item-title" data-name="questions-accordeon">
+                            Мы не уверены подойдет ли нам курс
+                            <svg class="questions__item-arrow" width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L9 9L17 1" stroke="#030304" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="questions__item-answer">
+                            Вам доступен пробный урок. Который позволит оценить степень заинтересованности вашего ребёнка в освоении китайского языка
+                        </div>
+                    </div>
+                    <div class="questions__item _anim-items">
+                        <div class="questions__item-title" data-name="questions-accordeon">
+                            Я не знаю китайского, мой ребенок сможет изучать его без меня?
+                            <svg class="questions__item-arrow" width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L9 9L17 1" stroke="#030304" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="questions__item-answer">
+                            Ваше участие в процессе обучения не обязательно. Однако при вашем желании вы можете также смотреть видеоуроки и начать учить китайский вместе с ребёнком
+                        </div>
+                    </div>
+                    <div class="questions__item _anim-items">
+                        <div class="questions__item-title" data-name="questions-accordeon">
+                            Как осуществляется доставка?
+                            <svg class="questions__item-arrow" width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L9 9L17 1" stroke="#030304" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="questions__item-answer">
+                            Бесплатная доставка в регионы России<br>
+                            Способы доставки: Почта Росии, СДЭК
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__contacts">
+                    <div class="footer__phone">
+                        <h4 class="footer__contacts-title _anim-items">
+                            Для вопросов
+                        </h4>
+                        <a href="tel:+79526418687" class="footer__contacts-number _anim-items">
+                            +7(952) 641 86 87
+                        </a>
+                    </div>
+                    <div class="footer__mail">
+                        <h4 class="footer__contacts-title _anim-items">
+                            По вопросам сотрудничества
+                        </h4>
+                        <a href="mailto:info@laozi-kids.ru" class="footer__contacts-number _anim-items">
+                            info@laozi-kids.ru
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__links _anim-items footer__links--borderRight">
+                    <h4 class="footer__links-title">
+                        Для взрослых
+                    </h4>
+                    <div class="footer__links-icons">
+                        <a href="#">
+                            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1321_497)">
+                                <path d="M45.955 13.5241C45.8472 11.08 45.452 9.39963 44.8858 7.9436C44.3017 6.39805 43.4031 5.01433 42.2257 3.86404C41.0754 2.69584 39.6826 1.7881 38.155 1.21313C36.6905 0.646931 35.0189 0.251682 32.5748 0.143918C30.1124 0.0270286 29.3307 0 23.0853 0C16.8399 0 16.0582 0.0270286 13.6049 0.134792C11.1608 0.242555 9.48044 0.638156 8.02476 1.204C6.47886 1.7881 5.09514 2.68671 3.94484 3.86404C2.77665 5.01433 1.86926 6.40718 1.29394 7.93482C0.727741 9.39963 0.332492 11.0708 0.224729 13.515C0.107839 15.9774 0.0808105 16.7591 0.0808105 23.0045C0.0808105 29.2499 0.107839 30.0316 0.215602 32.4849C0.323366 34.929 0.718966 36.6094 1.28516 38.0654C1.86926 39.6109 2.77665 40.9947 3.94484 42.1449C5.09514 43.3131 6.48799 44.2209 8.01563 44.7959C9.48044 45.3621 11.1516 45.7573 13.5962 45.8651C16.0491 45.9732 16.8312 45.9999 23.0765 45.9999C29.3219 45.9999 30.1036 45.9732 32.5569 45.8651C35.001 45.7573 36.6814 45.3621 38.1371 44.7959C41.2285 43.6006 43.6726 41.1565 44.8679 38.0654C45.4337 36.6006 45.8293 34.929 45.9371 32.4849C46.0448 30.0316 46.0719 29.2499 46.0719 23.0045C46.0719 16.7591 46.0627 15.9774 45.955 13.5241ZM41.8126 32.3051C41.7136 34.5517 41.3363 35.7648 41.0217 36.5735C40.2488 38.5775 38.6583 40.168 36.6543 40.9409C35.8456 41.2555 34.6237 41.6328 32.3859 41.7314C29.9597 41.8396 29.232 41.8662 23.0944 41.8662C16.9568 41.8662 16.22 41.8396 13.8026 41.7314C11.556 41.6328 10.3429 41.2555 9.53414 40.9409C8.5369 40.5724 7.62916 39.9883 6.89236 39.2245C6.12854 38.4785 5.54445 37.5799 5.17587 36.5827C4.86136 35.7739 4.48401 34.5517 4.38538 32.3143C4.27726 29.888 4.25058 29.16 4.25058 23.0224C4.25058 16.8848 4.27726 16.148 4.38538 13.7309C4.48401 11.4843 4.86136 10.2712 5.17587 9.46246C5.54445 8.46486 6.12854 7.55748 6.90149 6.82033C7.64706 6.05651 8.54567 5.47241 9.54327 5.10419C10.352 4.78968 11.5743 4.41233 13.8117 4.31334C16.2379 4.20558 16.966 4.17855 23.1032 4.17855C29.2499 4.17855 29.9776 4.20558 32.3951 4.31334C34.6416 4.41233 35.8547 4.78968 36.6635 5.10419C37.6607 5.47241 38.5685 6.05651 39.3052 6.82033C40.0691 7.56625 40.6532 8.46486 41.0217 9.46246C41.3363 10.2712 41.7136 11.4931 41.8126 13.7309C41.9204 16.1571 41.9474 16.8848 41.9474 23.0224C41.9474 29.16 41.9204 29.8789 41.8126 32.3051Z" fill="url(#paint0_linear_1321_497)"/>
+                                <path d="M23.0853 11.1877C16.5616 11.1877 11.2686 16.4804 11.2686 23.0045C11.2686 29.5286 16.5616 34.8213 23.0853 34.8213C29.6094 34.8213 34.9021 29.5286 34.9021 23.0045C34.9021 16.4804 29.6094 11.1877 23.0853 11.1877ZM23.0853 30.6697C18.8531 30.6697 15.4201 27.2371 15.4201 23.0045C15.4201 18.7719 18.8531 15.3393 23.0853 15.3393C27.3179 15.3393 30.7506 18.7719 30.7506 23.0045C30.7506 27.2371 27.3179 30.6697 23.0853 30.6697Z" fill="url(#paint1_linear_1321_497)"/>
+                                <path d="M38.1283 10.7206C38.1283 12.244 36.8931 13.4793 35.3693 13.4793C33.8458 13.4793 32.6106 12.244 32.6106 10.7206C32.6106 9.19681 33.8458 7.96191 35.3693 7.96191C36.8931 7.96191 38.1283 9.19681 38.1283 10.7206Z" fill="url(#paint2_linear_1321_497)"/>
+                                </g>
+                                <defs>
+                                <linearGradient id="paint0_linear_1321_497" x1="23.0763" y1="0" x2="23.0763" y2="45.9999" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#494596"/>
+                                <stop offset="1" stop-color="#312C98"/>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_1321_497" x1="23.0853" y1="11.1877" x2="23.0853" y2="34.8213" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#494596"/>
+                                <stop offset="1" stop-color="#312C98"/>
+                                </linearGradient>
+                                <linearGradient id="paint2_linear_1321_497" x1="35.3694" y1="7.96191" x2="35.3694" y2="13.4793" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#494596"/>
+                                <stop offset="1" stop-color="#312C98"/>
+                                </linearGradient>
+                                <clipPath id="clip0_1321_497">
+                                <rect width="46" height="46" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.795557 20.4589L12.0445 26.0652C12.4796 26.2799 12.9932 26.2645 13.4091 26.0211L23.4218 20.2002L17.3613 25.5707C17.0527 25.8448 16.8764 26.2358 16.8764 26.6479V39.7291C16.8764 41.1091 18.6378 41.6899 19.4639 40.5935L24.3265 34.1286L36.3516 40.9769C37.195 41.4618 38.276 40.9749 38.4715 40.0109L45.9714 2.63586C46.1956 1.51269 45.0782 0.596524 44.0394 1.01436L0.91439 17.8331C-0.243276 18.2854 -0.318027 19.905 0.795557 20.4589ZM42.6364 4.64836L36.045 37.4943L24.6504 31.0044C24.0294 30.6499 23.2301 30.807 22.7893 31.3897L19.7514 35.4281V27.2938L36.1408 12.7731C37.4384 11.625 35.9472 9.58377 34.4656 10.4539L12.6348 23.1461L4.98347 19.3339L42.6364 4.64836Z" fill="url(#paint0_linear_1321_502)"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_1321_502" x1="23.0011" y1="0.911377" x2="23.0011" y2="41.1669" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#494596"/>
+                                <stop offset="1" stop-color="#312C98"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__links _anim-items">
+                    <h4 class="footer__links-title">
+                        Для детей
+                    </h4>
+                    <div class="footer__links-icons">
+                        <a href="#">
+                            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1321_497)">
+                                <path d="M45.955 13.5241C45.8472 11.08 45.452 9.39963 44.8858 7.9436C44.3017 6.39805 43.4031 5.01433 42.2257 3.86404C41.0754 2.69584 39.6826 1.7881 38.155 1.21313C36.6905 0.646931 35.0189 0.251682 32.5748 0.143918C30.1124 0.0270286 29.3307 0 23.0853 0C16.8399 0 16.0582 0.0270286 13.6049 0.134792C11.1608 0.242555 9.48044 0.638156 8.02476 1.204C6.47886 1.7881 5.09514 2.68671 3.94484 3.86404C2.77665 5.01433 1.86926 6.40718 1.29394 7.93482C0.727741 9.39963 0.332492 11.0708 0.224729 13.515C0.107839 15.9774 0.0808105 16.7591 0.0808105 23.0045C0.0808105 29.2499 0.107839 30.0316 0.215602 32.4849C0.323366 34.929 0.718966 36.6094 1.28516 38.0654C1.86926 39.6109 2.77665 40.9947 3.94484 42.1449C5.09514 43.3131 6.48799 44.2209 8.01563 44.7959C9.48044 45.3621 11.1516 45.7573 13.5962 45.8651C16.0491 45.9732 16.8312 45.9999 23.0765 45.9999C29.3219 45.9999 30.1036 45.9732 32.5569 45.8651C35.001 45.7573 36.6814 45.3621 38.1371 44.7959C41.2285 43.6006 43.6726 41.1565 44.8679 38.0654C45.4337 36.6006 45.8293 34.929 45.9371 32.4849C46.0448 30.0316 46.0719 29.2499 46.0719 23.0045C46.0719 16.7591 46.0627 15.9774 45.955 13.5241ZM41.8126 32.3051C41.7136 34.5517 41.3363 35.7648 41.0217 36.5735C40.2488 38.5775 38.6583 40.168 36.6543 40.9409C35.8456 41.2555 34.6237 41.6328 32.3859 41.7314C29.9597 41.8396 29.232 41.8662 23.0944 41.8662C16.9568 41.8662 16.22 41.8396 13.8026 41.7314C11.556 41.6328 10.3429 41.2555 9.53414 40.9409C8.5369 40.5724 7.62916 39.9883 6.89236 39.2245C6.12854 38.4785 5.54445 37.5799 5.17587 36.5827C4.86136 35.7739 4.48401 34.5517 4.38538 32.3143C4.27726 29.888 4.25058 29.16 4.25058 23.0224C4.25058 16.8848 4.27726 16.148 4.38538 13.7309C4.48401 11.4843 4.86136 10.2712 5.17587 9.46246C5.54445 8.46486 6.12854 7.55748 6.90149 6.82033C7.64706 6.05651 8.54567 5.47241 9.54327 5.10419C10.352 4.78968 11.5743 4.41233 13.8117 4.31334C16.2379 4.20558 16.966 4.17855 23.1032 4.17855C29.2499 4.17855 29.9776 4.20558 32.3951 4.31334C34.6416 4.41233 35.8547 4.78968 36.6635 5.10419C37.6607 5.47241 38.5685 6.05651 39.3052 6.82033C40.0691 7.56625 40.6532 8.46486 41.0217 9.46246C41.3363 10.2712 41.7136 11.4931 41.8126 13.7309C41.9204 16.1571 41.9474 16.8848 41.9474 23.0224C41.9474 29.16 41.9204 29.8789 41.8126 32.3051Z" fill="url(#paint0_linear_1321_497)"/>
+                                <path d="M23.0853 11.1877C16.5616 11.1877 11.2686 16.4804 11.2686 23.0045C11.2686 29.5286 16.5616 34.8213 23.0853 34.8213C29.6094 34.8213 34.9021 29.5286 34.9021 23.0045C34.9021 16.4804 29.6094 11.1877 23.0853 11.1877ZM23.0853 30.6697C18.8531 30.6697 15.4201 27.2371 15.4201 23.0045C15.4201 18.7719 18.8531 15.3393 23.0853 15.3393C27.3179 15.3393 30.7506 18.7719 30.7506 23.0045C30.7506 27.2371 27.3179 30.6697 23.0853 30.6697Z" fill="url(#paint1_linear_1321_497)"/>
+                                <path d="M38.1283 10.7206C38.1283 12.244 36.8931 13.4793 35.3693 13.4793C33.8458 13.4793 32.6106 12.244 32.6106 10.7206C32.6106 9.19681 33.8458 7.96191 35.3693 7.96191C36.8931 7.96191 38.1283 9.19681 38.1283 10.7206Z" fill="url(#paint2_linear_1321_497)"/>
+                                </g>
+                                <defs>
+                                <linearGradient id="paint0_linear_1321_497" x1="23.0763" y1="0" x2="23.0763" y2="45.9999" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#494596"/>
+                                <stop offset="1" stop-color="#312C98"/>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_1321_497" x1="23.0853" y1="11.1877" x2="23.0853" y2="34.8213" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#494596"/>
+                                <stop offset="1" stop-color="#312C98"/>
+                                </linearGradient>
+                                <linearGradient id="paint2_linear_1321_497" x1="35.3694" y1="7.96191" x2="35.3694" y2="13.4793" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#494596"/>
+                                <stop offset="1" stop-color="#312C98"/>
+                                </linearGradient>
+                                <clipPath id="clip0_1321_497">
+                                <rect width="46" height="46" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.795557 20.4589L12.0445 26.0652C12.4796 26.2799 12.9932 26.2645 13.4091 26.0211L23.4218 20.2002L17.3613 25.5707C17.0527 25.8448 16.8764 26.2358 16.8764 26.6479V39.7291C16.8764 41.1091 18.6378 41.6899 19.4639 40.5935L24.3265 34.1286L36.3516 40.9769C37.195 41.4618 38.276 40.9749 38.4715 40.0109L45.9714 2.63586C46.1956 1.51269 45.0782 0.596524 44.0394 1.01436L0.91439 17.8331C-0.243276 18.2854 -0.318027 19.905 0.795557 20.4589ZM42.6364 4.64836L36.045 37.4943L24.6504 31.0044C24.0294 30.6499 23.2301 30.807 22.7893 31.3897L19.7514 35.4281V27.2938L36.1408 12.7731C37.4384 11.625 35.9472 9.58377 34.4656 10.4539L12.6348 23.1461L4.98347 19.3339L42.6364 4.64836Z" fill="url(#paint0_linear_1321_502)"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_1321_502" x1="23.0011" y1="0.911377" x2="23.0011" y2="41.1669" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#494596"/>
+                                <stop offset="1" stop-color="#312C98"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__line">
+                <p class="footer__line-text">
+                    Copyright © 2021 Laozi-Kids
+                </p>
+                <p class="footer__line-text">
+                    ИНН 910813118909
+                </p>
+                <a class="footer__line-text" href="https://laozi-kids.ru/privacy.html">
+                    Политика конфедициальности
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
