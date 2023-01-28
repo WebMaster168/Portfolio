@@ -65,10 +65,7 @@ p{
 	font-size: 16px;
 }
 @media (max-width: 1024px) {
-.slide.active{
-	flex: 5;
 
-}
 
 
 body{
