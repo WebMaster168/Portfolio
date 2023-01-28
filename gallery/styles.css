@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); 
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  overflow-y: hidden;
+  margin: 0;
+  
+ min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+	width: 100%;
+	background: #f59d13;
+	min-height: 100vh;
+}
+.wrapper{
+	width: 100%;
+	padding: 0 20px;
+	display: flex;
+	overflow: hidden !important;
+
+}
+.slide{
+	height: 70vh;
+	border-radius: 20px;
+	margin: 10px;
+	cursor: pointer;
+	color: #fff;
+	flex: 1;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	transition: all 500ms ease-in-out;
+}
+.slide h3{
+	position: absolute;
+	font-size: 24px;
+	bottom: 20px;
+	left:20px;
+	opacity: 0;
+}
+.slide.active{
+	flex: 10;
+}
+.slide.active h3{
+	opacity: 1;
+	transition: opacity 0.3s ease-in 0.4s;
+}
+h1{
+	text-align: center;
+	color: white;
+	font-size: 24px;
+	padding-top:20px;
+}
+p{
+	text-align: center;
+	color: white;
+	font-size: 16px;
+}
+@media (max-width: 1024px) {
+.slide.active{
+	flex: 5;
+
+}
+
+
+body{
+	overflow: scroll;
+}
+}
+@media (max-width: 373px) {
+.slide h3 {
+    position: absolute;
+    font-size: 16px;
+}
+}
