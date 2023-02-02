@@ -111,4 +111,7 @@ h1 {
   .screen{
     padding: 0 15px;
   }
+  body{
+    overflow: scroll;
+  }
 }
