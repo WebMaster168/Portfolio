@@ -5,7 +5,7 @@ const timeEl = document.querySelector('#time');
 const board = document.querySelector('#board');
 const colors = ['#ea9f94', '#def60c','#36ad16', '#2eecb4', '#204cf0','#a101fc','#f4175a','#165275'];
 const newGame = document.querySelector('.newGame');
-
+let timer;
 let time = 0;
 let score = 0;
 
@@ -23,6 +23,7 @@ timeList.addEventListener('click', event => {
 		startGame();
 		screens[1].classList.remove('up');
 		screens[2].classList.add('up');
+		newGame.classList.remove('hid');
 	}
 })
 
@@ -37,16 +38,29 @@ newGame.addEventListener('click', ()=>{
 	screens[2].classList.remove('up');
 	screens[1].classList.add('up');
 })
+
 function startGame(){
-	setInterval(decreaseTime,1000);
+	timeEl.parentNode.classList.remove('hide');
+	board.innerHTML = ``;
+	timer=setInterval(decreaseTime,1000);
 	createRandomCircle();
 	setTime(time);
 	
+		
+	
+	
+	
+		
 }
 
 function decreaseTime(){
 	if(time === 0){
+		
 		finishGame();
+		clearInterval(timer);
+	console.log("stop");
+		
+
 	} else{
 		let current = --time;
 		if (current < 10){
@@ -63,9 +77,12 @@ function setTime(value){
 }
 
 function finishGame(){
+	time = 0;
 	timeEl.parentNode.classList.add('hide');
-	board.innerHTML = `<h1>Ваш счёт: <span class="primary">${score}</span><br><p class="reload">Для новой игры обновите страницу</p></h1>`
+	board.innerHTML = `<h1 class="score">Ваш счёт: <span class="primary">${score}</span><br></h1>`
 	newGame.classList.add('hid');
+	
+	
 }
 
 function createRandomCircle(){
