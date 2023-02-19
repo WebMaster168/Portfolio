@@ -8,6 +8,7 @@ body {
   color: #fff;
   font-family: "Khula", sans-serif;
   min-height: 100vh;
+  overflow: hidden;
   
   margin: 0;
   text-align: center;
@@ -54,7 +55,7 @@ h1 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom:0;
+  
 }
 
 .screen.up {
