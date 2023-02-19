@@ -31,10 +31,7 @@ h1 {
   line-height: 1.4;
   font-size: 4rem;
 }
-h3{
-  position: absolute;
-  bottom: 0;
-}
+
 .newGame.hid{
   display: flex;
   position: absolute;
@@ -45,6 +42,7 @@ h3{
     padding: 10px 15px;
     font-size: 24px;
     border-radius: 37px;
+    cursor: pointer;
 }
 .screen {
   display: flex;
@@ -138,6 +136,10 @@ h3{
   .screen.scroll{
     overflow: scroll;
   }
+  h3{
+  position: absolute;
+  bottom: 0;
+}
 }
 @media(max-width:390px){
 .score{

@@ -37,6 +37,7 @@ board.addEventListener('click', event =>{
 newGame.addEventListener('click', ()=>{
 	screens[2].classList.remove('up');
 	screens[1].classList.add('up');
+	score=0;
 })
 
 function startGame(){
