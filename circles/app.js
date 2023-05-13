@@ -107,8 +107,7 @@ function setColor(element){
 	const color = getRandomColor();
 	
 	element.style.background = color;
-	console.log(color);
-	console.log(element);
+
 }
 function getRandomColor(){
 	const index = Math.floor(Math.random()*colors.length);
