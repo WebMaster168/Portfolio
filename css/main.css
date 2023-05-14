@@ -17,6 +17,47 @@ header{
 	background-size: cover;
 	position: relative;
 }
+.modal__photo{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding: 15px;
+	background: rgba(205, 214, 219, 0.5);
+}
+.modal__photo-wrapper{
+	display: flex;
+		justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+.modal__photo-inner{
+	text-align: center;
+	padding: 30px;
+	border-radius: 15px;
+	background: grey;
+	position: relative;
+}
+.modal__photo-inner img{
+	max-width: 525px;
+}
+.modal__photo.hide{
+	display: none;
+}
+.close{
+	color: red;
+	top: 5px;
+	right: 5px;
+	position: absolute;
+	font-size: 27px;
+	font-family: sans-serif;
+	cursor: pointer;
+
+}
+.card-photo-img{
+	cursor: zoom-in;
+}
 main{
 	/*background-color: #1b212c;*/
 	background-image: url(../img/fon.jpg);
