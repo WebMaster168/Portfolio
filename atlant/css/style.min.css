@@ -1451,9 +1451,9 @@ body {
   -o-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
   opacity: 0;
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 .header__phone._active {
   -webkit-transform: translateX(0);
@@ -1576,9 +1576,9 @@ body {
   -o-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
   opacity: 0;
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 .anim--four._active {
   -webkit-transform: translateX(0%);
@@ -1591,9 +1591,9 @@ body {
   -o-transition: all 1.5s ease 0s;
   transition: all 1.5s ease 0s;
   opacity: 0;
-  -webkit-transform: translateX(200%);
-      -ms-transform: translateX(200%);
-          transform: translateX(200%);
+  -webkit-transform: translateX(-200%);
+      -ms-transform: translateX(-200%);
+          transform: translateX(-200%);
 }
 .anim--five._active {
   -webkit-transform: translateX(0%);
@@ -1607,9 +1607,9 @@ body {
   -o-transition: all 2s ease 0s;
   transition: all 2s ease 0s;
   opacity: 0;
-  -webkit-transform: translateX(200%);
-      -ms-transform: translateX(200%);
-          transform: translateX(200%);
+  -webkit-transform: translateX(-200%);
+      -ms-transform: translateX(-200%);
+          transform: translateX(-200%);
 }
 .anim--six._active {
   -webkit-transform: translateX(0%);
