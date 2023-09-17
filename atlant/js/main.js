@@ -1,34 +1,34 @@
 const tabHeaders = document.querySelectorAll('[data-tab]');
 const contentBoxes = document.querySelectorAll('[data-tab-content]');
 tabHeaders.forEach(function(item){
-	item.addEventListener('click', function(){
-		contentBoxes.forEach(function(item){
+    item.addEventListener('click', function(){
+        contentBoxes.forEach(function(item){
             
             item.classList.add('hidden');
             setTimeout(()=> {
                 item.classList.remove('opacity');
             },300);
             
-		})
-		const contentBox = document.querySelector('#' + this.dataset.tab);
+        })
+        const contentBox = document.querySelector('#' + this.dataset.tab);
         contentBox.classList.remove('hidden');
         setTimeout(()=> {    
             contentBox.classList.add('opacity');
         },300);
-	})
+    })
 })
 
 let tabNavItem=document.querySelectorAll('.volume__category');
 tabNavItem.forEach(function(elem){
-	elem.addEventListener('click', activeTab);
+    elem.addEventListener('click', activeTab);
 })
 
 function activeTab(){
-	tabNavItem.forEach(function(elem){
+    tabNavItem.forEach(function(elem){
         elem.classList.remove('active');
         
-	})
-	this.classList.add('active');
+    })
+    this.classList.add('active');
 }
 
 $('.reviews__slider').slick({
@@ -137,7 +137,15 @@ function closeModal(){
 }
 
 
+const arrowsSlider = document.querySelectorAll('.reviews__slider .slick-arrow');
+arrowsSlider.forEach(arrow =>{
+    arrow.classList.add('_anim-items');
+})
 
+const dotsSlider = document.querySelectorAll('.reviews__slider .slick-dots li button');
+dotsSlider.forEach(dot =>{
+    dot.classList.add('_anim-items');
+})
 /*Анимация текста при скролле*/
 
 const animItems = document.querySelectorAll('._anim-items');
@@ -174,3 +182,5 @@ if(animItems.length > 0){
         }, 300);
         
 }
+
+
