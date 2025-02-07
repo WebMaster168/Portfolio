@@ -5,10 +5,13 @@ const overlay = document.getElementById('overlay');
 const btnStart = document.querySelector('.startGame');
 const snake = document.querySelector('.snake');
 const snakeHead = document.querySelector('.snake__head');
+const snakeHeadInner = document.querySelector('.snake__headWrapper');
+const snakeSecond = document.querySelector('.snake__body-crocodily');
 const snakeSegments = snake.querySelectorAll('.snake__body');
 
+let snakeArray = []
 
-
+let firstMove = true;
 let snakeLength = snakeSegments.length;
 let cycleGame = false;
 let positionX = 0;
@@ -19,9 +22,16 @@ let positionXhead = 175;
 let positionYhead = 50;
 snakeHead.style.top = positionYhead
 snakeHead.style.left = positionXhead
+
 snakeHead.style.transform = 'rotate(90deg)'
 
+    snakeSegments.forEach((item, index)=>{
+        
+        snakeArray.push(item)
+        
+    })
 
+console.log(snakeArray)
 let direction = 'R';
 let keyPress = '';
 snakeSegments.forEach((item, index) =>{
@@ -73,11 +83,33 @@ function moveLeft(head){
 }
 
 function moveRight(head){
+    
     segmentHeadX = head.style.left 
     segmentHeadX = parseInt(segmentHeadX.match(/\d+/))
     segmentHeadX += 25
     head.style.left = `${segmentHeadX}px`;
 }
+const createSegment =(snakeHead)=>{
+    firstMove = false
+    const newBodySegment = document.createElement('div')
+    newBodySegment.classList.add('snake__segment', 'snake__body')
+    snakeSecond.classList.add('snake__body-crocodily--visible')
+    //newBodySegment.style.transform =
+    const headRect = snakeHead.getBoundingClientRect();
+    const snakeRect = snake.getBoundingClientRect();
+    snakeArray.push(newBodySegment)
+    newBodySegment.style.left = `${(headRect.x - snakeRect.x) + 25}px`
+    
+    newBodySegment.style.top = `${headRect.y - snakeRect.y}px`
+    
+    snakeHeadInner.append(newBodySegment, snakeSecond)
+    
+}
+const firstMovement =(item)=>{
+    
+       
+}
+
 const moveSnake = () => {
     
     document.addEventListener('keydown',e=>{
@@ -99,41 +131,53 @@ const moveSnake = () => {
     
 
     intervalBegin = setInterval(()=>{
-        
+        let segmentX;
+            let segmentY;
+        const logicMove = (prevX, prevY) =>{
+            snakeArray.forEach(el =>{
+                
+                currentX = el.style.left;
+                currentY = el.style.top;
+                el.style.left = prevX;
+                el.style.top = prevY;
+                prevX = currentX;
+                prevY = currentY; 
+                
+                console.log('work2')
+            })
+            
+           
+            
+        }
         if(cycleGame){
             
             
-            let segmentX;
-            let segmentY;
+            
             //snakeHead.style.left = `${snakeHead.style.left + 25}px`;
             let prevX = snakeHead.style.left;
             let prevY = snakeHead.style.top;
 
             let prev2X, prev2Y;
+            logicMove(prevX, prevY) 
             snakeSegments.forEach((item,index)=>{
+                
                 //const {width, height} = item.getBoundingClientRect();
-                prev2X = item.style.left;
-                prev2Y = item.style.top;
-                item.style.left = prevX;
-                item.style.top = prevY;
-                prevX = prev2X;
-                prevY = prev2Y;    
+                
             
                 // Save the current coordinates of the snake's head
                 let segmentHeadX, segmentHeadY;
+                
                 // Movement of the snake's head depending on the direction
-                if(index === 0 && direction){
+                if(index === 0 ){
+                   
                     
-                    if (direction === 'R') {
-                        segmentX = item.style.left
-                        segmentX = parseInt(segmentX.match(/\d+/))
-                        item.style.left = `${segmentX + incrementX}px`
-                        
-                            
-                    }
                     switch (keyPress) {
                         case 'ArrowUp': 
-
+                                if(firstMove === true){
+                                    
+                                    createSegment(item)
+                                    
+                                }
                                     
                                     if(direction != 'D'){
                                         moveUp(item)
@@ -149,6 +193,10 @@ const moveSnake = () => {
                                 
                                 break;
                         case 'ArrowDown':
+                                if(firstMove === true){
+                                    
+                                    createSegment(item)
+                                }
                                 if(direction != 'U'){
                                     moveDown(item)
                                     rotX = item.style.left
@@ -160,7 +208,10 @@ const moveSnake = () => {
                                 }
                                 break;
                         case 'ArrowLeft':
-                                
+                                if(firstMove === true){
+                                    
+                                    createSegment(item)
+                                }
                                 if(direction != 'Rr'){
                                     moveLeft(item)
                                     item.style.transform = 'rotate(270deg)'
@@ -171,6 +222,14 @@ const moveSnake = () => {
                                 break;
                         case 'ArrowRight':
                                 
+                                if(firstMove == true){
+                                    createSegment(item)
+                                    
+                                }    
+                                    //
+                                    
+                                   // 
+                                
                                 if(direction != 'L'){
                                     moveRight(item)
                                     item.style.transform = 'rotate(450deg)'
@@ -179,6 +238,13 @@ const moveSnake = () => {
                                     moveLeft(item)
                                 }
                                 break;
+                    }
+                }else{
+                    if (direction == 'R') {
+                        segmentX = item.style.left
+                        segmentX = parseInt(segmentX.match(/\d+/))
+                        item.style.left = `${segmentX + incrementX}px`
+                            
                     }
                 }
 
