@@ -1,4 +1,9 @@
-const area = document.getElementById('area-wrapper');
+let area = document.querySelector('.area-wrapper');
+let newBodySegment;
+let flyMouseInner;
+let flyMouse;
+let score = 0;
+const scoreDOM = document.querySelector('.snake__score-number')
 const contentWrapper = document.getElementById('content');
 const modalResult = document.querySelector('.modal-result-wrapper');
 const overlay = document.getElementById('overlay');
@@ -8,11 +13,11 @@ const snakeHead = document.querySelector('.snake__head');
 const snakeHeadInner = document.querySelector('.snake__headWrapper');
 const snakeSecond = document.querySelector('.snake__body-crocodily');
 const snakeSegments = snake.querySelectorAll('.snake__body');
-
+let firstPause = false;
 let snakeArray = []
-
+let X, Y;
 let firstMove = true;
-let snakeLength = snakeSegments.length;
+let snakeLength = snakeArray.length;
 let cycleGame = false;
 let positionX = 0;
 let positionY = 0;
@@ -20,6 +25,7 @@ let incrementX = 25;
 let rotX, rotY;
 let positionXhead = 175;
 let positionYhead = 50;
+
 snakeHead.style.top = positionYhead
 snakeHead.style.left = positionXhead
 
@@ -52,7 +58,7 @@ const prepareResult = (score, stoped) =>{
 const closeModal = () => {
     modalResult.classList.add('hidden');
 	cycleGame = true;
-    initGame();
+    initGame(score);
     
 	
 }
@@ -81,6 +87,21 @@ function moveLeft(head){
     head.style.left = `${segmentHeadX}px`;
     
 }
+function getRandomNumber(min, max) {
+    // Округляем min и max до ближайших значений, кратных 25
+    min = Math.ceil(min / 25) * 25; // Округляем вверх
+    max = Math.floor(max / 25) * 25; // Округляем вниз
+  
+    // Генерируем случайное число кратное 25
+    return Math.floor(Math.random() * ((max - min) / 25 + 1)) * 25 + min;
+}
+
+function setColor(element){
+	const color = getRandomColor();
+	
+	element.style.background = color;
+
+}
 
 function moveRight(head){
     
@@ -91,7 +112,7 @@ function moveRight(head){
 }
 const createSegment =(snakeHead)=>{
     firstMove = false
-    const newBodySegment = document.createElement('div')
+    newBodySegment = document.createElement('div')
     newBodySegment.classList.add('snake__segment', 'snake__body')
     snakeSecond.classList.add('snake__body-crocodily--visible')
     //newBodySegment.style.transform =
@@ -105,23 +126,81 @@ const createSegment =(snakeHead)=>{
     snakeHeadInner.append(newBodySegment, snakeSecond)
     
 }
-const firstMovement =(item)=>{
+function createRandomFood(score){
+	flyMouseInner = document.createElement('div');
+    flyMouse = document.createElement('img');
+    flyMouse.src="images/flyMouse.gif"
     
-       
+    
+	const size = 25
+	const {width, height} = area.getBoundingClientRect();
+	X = getRandomNumber(0, width);
+	Y = getRandomNumber(0, height);
+	
+	flyMouseInner.classList.add('food');
+	flyMouse.style.width =`${size}px`;
+	flyMouse.style.height =`${size}px`;
+	flyMouseInner.style.top = `${Y}px`;
+	flyMouseInner.style.left = `${X}px`;
+
+	
+	area.append(flyMouseInner)
+    flyMouseInner.append(flyMouse)
+    
+}
+const createSegmentIntheEndSnake=(snakeHead)=>{
+    const headRect = snakeHead.getBoundingClientRect();
+    const snakeRect = snakeSecond.getBoundingClientRect();
+    const newBodysnakeSegment = document.createElement('div')
+    newBodysnakeSegment.classList.add('snake__segment', 'snake__body', 'snake__body--eating')
+    setTimeout(()=>{
+        newBodysnakeSegment.classList.add('snake__body--eatingVisible')
+    }, 300)
+    //newBodysnakeSegment.style.left = `${(headRect.x - snakeRect.x)}px`
+    //newBodysnakeSegment.style.top = `${headRect.y - snakeRect.y}px`
+    snakeArray.push(newBodysnakeSegment)
+    snake.append(newBodysnakeSegment)
+
+}
+const examinationOnFoodEating =(score, X, Y) =>{
+    let snakeHeadXposition = snakeHead.style.left
+    
+    snakeHeadXposition = parseInt(snakeHeadXposition.match(/\d+/))
+    let snakeHeadYposition = snakeHead.style.top
+    snakeHeadYposition = parseInt(snakeHeadYposition.match(/\d+/))
+    
+    if(snakeHeadXposition === X && snakeHeadYposition === Y){
+        
+        
+        createSegmentIntheEndSnake(snakeHead)
+        flyMouseInner.remove()
+        createRandomFood(score)
+        score += 1
+        
+        
+    }
+    return score   
 }
 
-const moveSnake = () => {
-    
+const moveSnake = (score) => {
+    if(!firstPause){
+        createRandomFood(score);
+        
+    }
     document.addEventListener('keydown',e=>{
         if(e.key === "Escape"){
             cycleGame = false;
             modalResult.classList.remove('hidden');
             contentWrapper.textContent = "Игра приостановлена";
             btnStart.textContent = "Продолжить";
-            /*
+            firstPause = true
+            
             btnStart.addEventListener('click',()=>{
-                direction = direction
-            })*/
+                clearInterval(intervalBegin)
+                score = score
+                moveSnake(score)
+                modalResult.classList.add('hidden');
+            })
             clearInterval(intervalBegin)            
         }else{
             keyPress = e.key    
@@ -133,9 +212,10 @@ const moveSnake = () => {
     intervalBegin = setInterval(()=>{
         let segmentX;
             let segmentY;
+        
         const logicMove = (prevX, prevY) =>{
             snakeArray.forEach(el =>{
-                
+                snakeLength = snakeArray.length;
                 currentX = el.style.left;
                 currentY = el.style.top;
                 el.style.left = prevX;
@@ -159,11 +239,15 @@ const moveSnake = () => {
 
             let prev2X, prev2Y;
             logicMove(prevX, prevY) 
+            let newScore = examinationOnFoodEating(score, X, Y)
+            score = newScore;
+            console.log("score", score)
+            scoreDOM.innerHTML=`${score}`
             snakeSegments.forEach((item,index)=>{
                 
                 //const {width, height} = item.getBoundingClientRect();
                 
-            
+                
                 // Save the current coordinates of the snake's head
                 let segmentHeadX, segmentHeadY;
                 
@@ -309,10 +393,10 @@ const moveSnake = () => {
     }while(running === true)*/
     
 }
-const initGame =() => {
-    let score = 0;
+const initGame =(score) => {
     
-    moveSnake();
+    
+    moveSnake(score);
     
 
 }

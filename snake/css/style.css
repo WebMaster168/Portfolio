@@ -31,6 +31,11 @@ body{
 	right: 0;
 	bottom: 0;
 }
+.food{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+}
 .sea{
 background-image: url('../images/water.jpg');
 height: 100vh;
@@ -43,9 +48,11 @@ position: absolute;
 }
 .area{
 	height: 100vh;
-	background-image: url('../images/desert.jpg');
-	
-	
+	background: url('../images/desert.jpg'),rgba(210, 174, 33, 0.9);
+	background-blend-mode: overlay;
+	-webkit-box-shadow: 32px -54px 65px 89px rgba(210, 174, 33, 0.57);
+	-moz-box-shadow: 32px -54px 65px 89px rgba(210, 174, 33, 0.57);
+	box-shadow: 32px -54px 65px 89px rgba(210, 174, 33, 1), 32px -54px 65px 89px rgba(210, 174, 33, 0.99) inset;;
 	
 	
 	max-width: 1180px;
@@ -126,7 +133,12 @@ h1{
     width: 50%;
     text-align: center;
 }
-
+.snake__body--eating{
+	opacity: 0;
+}
+.snake__body--eatingVisible{
+	opacity: 1;
+}
 .snake{
 	
     height: max-content;
