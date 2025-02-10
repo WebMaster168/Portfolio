@@ -23,6 +23,8 @@ let positionX = 0;
 let positionY = 0;
 let incrementX = 25;
 let rotX, rotY;
+const leftBorder = -100;
+const rightBorder = 1300;
 let positionXhead = 175;
 let positionYhead = 50;
 
@@ -44,25 +46,18 @@ snakeSegments.forEach((item, index) =>{
 	item.style.left = `${positionXhead - (index * 25)}px`
 	item.style.top = `${positionYhead}px`
 })
-const prepareResult = (score, stoped) =>{
-    modalResult.classList.remove('hidden');
-	
-    contentWrapper.textContent = 'Game over! \nScore: ' + score;
-    contentWrapper.style.fontSize = '24px'
-    btnStart.textContent = 'Начать новую игру'
-    
-    
-}
 
 
-const closeModal = () => {
+
+const closeModal = (intervalBegin) => {
     modalResult.classList.add('hidden');
-	cycleGame = true;
-    initGame(score);
-    
-	
+    clearInterval(intervalBegin)
+    cycleGame = true;
+    score = 0; // Сбрасываем счет при начале новой игры
+    initGame(); // Запускаем новую игру
 }
-btnStart.addEventListener('click', closeModal);
+
+
 let intervalBegin;
 let intervalHead;
 
@@ -84,7 +79,20 @@ function moveLeft(head){
     segmentHeadX = head.style.left
     segmentHeadX = parseInt(segmentHeadX.match(/\d+/))
     segmentHeadX -= 25
+    /*
+    if(segmentHeadX <= 0){
+        //segmentHeadX -= 25
+        if(segmentHeadX == leftBorder){
+            prepareResult(score)
+        }
+        head.style.left = `${segmentHeadX}px`;
+        
+    }else{
+        
+    }
+    */
     head.style.left = `${segmentHeadX}px`;
+    
     
 }
 function getRandomNumber(min, max) {
@@ -103,30 +111,34 @@ function setColor(element){
 
 }
 
-function moveRight(head){
+function moveRight(head, score){
     
     segmentHeadX = head.style.left 
     segmentHeadX = parseInt(segmentHeadX.match(/\d+/))
     segmentHeadX += 25
     head.style.left = `${segmentHeadX}px`;
+    //console.log(segmentHeadX, rightBorder)
+    if(segmentHeadX === rightBorder){
+        prepareResult(score)
+    }
 }
 const createSegment =(snakeHead)=>{
     firstMove = false
-    newBodySegment = document.createElement('div')
-    newBodySegment.classList.add('snake__segment', 'snake__body')
+    //newBodySegment = document.createElement('div')
+    //newBodySegment.classList.add('snake__segment', 'snake__body')
     snakeSecond.classList.add('snake__body-crocodily--visible')
     //newBodySegment.style.transform =
-    const headRect = snakeHead.getBoundingClientRect();
-    const snakeRect = snake.getBoundingClientRect();
-    snakeArray.push(newBodySegment)
-    newBodySegment.style.left = `${(headRect.x - snakeRect.x) + 25}px`
+    //const headRect = snakeHead.getBoundingClientRect();
+    //const snakeRect = snake.getBoundingClientRect();
+    //snakeArray.push(newBodySegment)
+    //newBodySegment.style.left = `${(headRect.x - snakeRect.x) + 25}px`
     
-    newBodySegment.style.top = `${headRect.y - snakeRect.y}px`
+    //newBodySegment.style.top = `${headRect.y - snakeRect.y}px`
     
-    snakeHeadInner.append(newBodySegment, snakeSecond)
+    //snakeHeadInner.append(newBodySegment, snakeSecond)
     
 }
-function createRandomFood(score){
+function createRandomFood(){
 	flyMouseInner = document.createElement('div');
     flyMouse = document.createElement('img');
     flyMouse.src="images/flyMouse.gif"
@@ -179,12 +191,48 @@ const examinationOnFoodEating =(score, X, Y) =>{
         
         
     }
-    return score   
+    return {score, snakeHeadXposition, snakeHeadYposition}    
+}
+const prepareResult = (score, intervalBegin) =>{
+    modalResult.classList.remove('hidden');
+    contentWrapper.textContent = 'Game over! \nScore: ' + score;
+	
+    
+    contentWrapper.style.fontSize = '24px'
+    btnStart.textContent = 'Начать новую игру'
+    btnStart.addEventListener('click',()=>{
+        
+        
+        location.reload();
+        //modalResult.classList.add('hidden');
+    })
+    cycleGame = false
+    
+}
+const examinationOnCollision=(positionHeadX, positionHeadY, score, intervalBegin)=>{
+    positionHeadX = parseInt(positionHeadX.match(/\d+/))
+    positionHeadY = parseInt(positionHeadY.match(/\d+/))
+       
+    for(let i = 2; i < snakeArray.length; i++){
+         
+        let positionSegmentX = snakeArray[i].style.left
+        let positionSegmentY = snakeArray[i].style.top
+        positionSegmentX = parseInt(positionSegmentX.match(/\d+/))
+        positionSegmentY = parseInt(positionSegmentY.match(/\d+/))
+        console.log(positionSegmentX, positionSegmentY)
+        if((positionHeadX === positionSegmentX && positionHeadY === positionSegmentY)&&snakeArray.length>5){
+            
+                //console.log(`Collision detected with segment ${i}: (${positionSegmentX}, ${positionSegmentY})`);
+                prepareResult(score, intervalBegin);
+                break;
+        }
+    }
+    
 }
 
 const moveSnake = (score) => {
     if(!firstPause){
-        createRandomFood(score);
+        createRandomFood();
         
     }
     document.addEventListener('keydown',e=>{
@@ -197,7 +245,7 @@ const moveSnake = (score) => {
             
             btnStart.addEventListener('click',()=>{
                 clearInterval(intervalBegin)
-                score = score
+                
                 moveSnake(score)
                 modalResult.classList.add('hidden');
             })
@@ -213,8 +261,8 @@ const moveSnake = (score) => {
         let segmentX;
             let segmentY;
         
-        const logicMove = (prevX, prevY) =>{
-            snakeArray.forEach(el =>{
+        const logicMove = (prevX, prevY, score, intervalBegin) =>{
+            snakeArray.forEach((el, i) =>{
                 snakeLength = snakeArray.length;
                 currentX = el.style.left;
                 currentY = el.style.top;
@@ -223,7 +271,12 @@ const moveSnake = (score) => {
                 prevX = currentX;
                 prevY = currentY; 
                 
-                console.log('work2')
+                if(i === 0){
+                    console.log(snakeArray, currentX, currentY)
+                    examinationOnCollision(currentX, currentY, score, intervalBegin)
+                }
+
+                
             })
             
            
@@ -238,10 +291,13 @@ const moveSnake = (score) => {
             let prevY = snakeHead.style.top;
 
             let prev2X, prev2Y;
-            logicMove(prevX, prevY) 
-            let newScore = examinationOnFoodEating(score, X, Y)
-            score = newScore;
-            console.log("score", score)
+            let mapingObject = examinationOnFoodEating(score, X, Y)
+            score = mapingObject.score;
+            logicMove(prevX, prevY, score, intervalBegin) 
+            
+            
+            
+            
             scoreDOM.innerHTML=`${score}`
             snakeSegments.forEach((item,index)=>{
                 
@@ -301,7 +357,7 @@ const moveSnake = (score) => {
                                     item.style.transform = 'rotate(270deg)'
                                     direction = 'L'
                                 }else if (direction == 'Rr') {
-                                    moveRight(item)
+                                    moveRight(item, score)
                                 }
                                 break;
                         case 'ArrowRight':
@@ -315,7 +371,7 @@ const moveSnake = (score) => {
                                    // 
                                 
                                 if(direction != 'L'){
-                                    moveRight(item)
+                                    moveRight(item, score)
                                     item.style.transform = 'rotate(450deg)'
                                     direction = 'Rr'
                                 }else if (direction == 'L') {
@@ -331,74 +387,22 @@ const moveSnake = (score) => {
                             
                     }
                 }
-
-                
-/*
-                // Snake body update
-                for (let i = 1; i < snakeLength; i++) {
-                    prev2X = snake[i].x;
-                    prev2Y = snake[i].y;
-                    snake[i].x = prevX;
-                    snake[i].y = prevY;
-                    prevX = prev2X;
-                    prevY = prev2Y;
-                }
-*/
             
-            })    
-            /*
-            for(let i = 0; i < snakeLength; i++){
-                /*
-                segmentX = snakeSegments[i-1].style.left
-                segmentY = snakeSegments[i-1].style.top
-                segmentX = parseInt(segmentX.match(/\d+/))
-                segmentY = parseInt(segmentY.match(/\d+/))
-                if(direction == 'R'){
-                    snakeSegments[i].style.left = `${segmentX-25}px` 
-                    
-                }else if(direction == 'D'){
-                   
-                        snakeSegments[i].style.top = `${segmentY-25}px` 
-                        snakeSegments[i].style.left = `${segmentX-25}px` 
-                    
-                        
-                   
-                   //snakeSegments[i].style.left = `${segmentX-25}px` 
-                    //snakeSegments[i].style.top = `${segmentY+25}px` 
-                      
-                }
-                
-                //snakeSegments[i].style.top = `${segmentY}px` 
-                
-                    
-        
-                //snakeSegments[i-1].style.left = `${segmentX+incrementX}px` 
-            }*/
-            
-            }
+          
+            })               
+          }
             
 
     }, 300)
-    
-/*
-    intervalHead = setInterval(()=>{
-        if(cycleGame){
-            positionXhead = snakeHead.style.left;
-            positionYhead = snakeHead.style.top;
-        }
-    }, 300)
-    /*
-    do{
-        
-    }while(running === true)*/
     
 }
-const initGame =(score) => {
+const initGame =() => {
     
     
     moveSnake(score);
     
 
 }
+btnStart.addEventListener('click', closeModal);
 
 //overlay.addEventListener('click', closeModal);

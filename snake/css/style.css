@@ -5,11 +5,19 @@ html{
 	height: 100vh;
     
 }
+
 body{
-	height: 100vh;
 	font-family: sans-serif;
+	min-height: 100vh;
 	
-	position: relative;
+	background-image: url('../images/water.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+
+position: relative;
+	/*right: 0;
+	left: 0;*/
+	z-index: 2;
 }
 .snake__score{
 	font-family: "Dancing Script", serif;
@@ -32,23 +40,49 @@ body{
 	right: 0;
 	bottom: 0;
 }
+.fence__item:nth-child(1) img{
+	left: 0;
+    top: -50px;
+    transform: rotate(90deg) scale(0.2);
+    transform-origin: left top;
+}
+.fence__item:nth-child(2) img{
+	left: 0;
+    top: 115px;
+    transform: rotate(90deg) scale(0.2);
+    transform-origin: left top;
+}
+.fence__item:nth-child(3) img{
+	left: 0;
+    top: 280px;
+    transform: rotate(90deg) scale(0.2);
+    transform-origin: left top;
+}
+.fence__item:nth-child(4) img{
+	left: 0;
+    top: 445px;
+    transform: rotate(90deg) scale(0.2);
+    transform-origin: left top;
+}
+.fence__item:nth-child(5) img{
+	left: 0;
+	top: 625px;
+    height: 545px;
+    transform: rotate(90deg) scale(0.2);
+    transform-origin: left top;
+	width: 500px;
+}
 .food{
 	width: 25px;
 	height: 25px;
 	position: absolute;
 }
 .sea{
-background-image: url('../images/water.jpg');
-height: 100vh;
-position: absolute;
-	right: 0;
-	left: 0;
-	z-index: 2;
-	background-repeat: no-repeat;
-	background-size: cover;
+
+	min-height: 100vh;
 }
 .area{
-	height: 100vh;
+	min-height: 100vh;
 	background: url('../images/desert.jpg'),rgba(210, 174, 33, 0.9);
 	background-blend-mode: overlay;
 	-webkit-box-shadow: 64px -54px 65px 209px rgba(210, 174, 33, 1), 64px -54px 65px 89px rgba(210, 174, 33, 1) inset;
@@ -71,7 +105,7 @@ position: absolute;
     background-image: url('../images/grass.jpg');
     max-width: 1170px;
 	box-shadow: 5px 1px 69px 76px rgba(16, 170, 31, 1), 1px 1px 72px 76px rgba(16, 170, 31, 1) inset;
-    height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
 	margin: 0 auto;
 	border-radius: 15px;
     background-repeat: no-repeat;
@@ -183,7 +217,7 @@ h1{
     justify-content: space-around;
 	transform:rotate(90deg);
 	transform-origin: center;
-	
+	left:0;
 }
 .snake__body-crocodily--visible{
 	
