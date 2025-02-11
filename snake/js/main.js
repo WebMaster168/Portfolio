@@ -219,12 +219,21 @@ const examinationOnCollision=(positionHeadX, positionHeadY, score, intervalBegin
         let positionSegmentY = snakeArray[i].style.top
         positionSegmentX = parseInt(positionSegmentX.match(/\d+/))
         positionSegmentY = parseInt(positionSegmentY.match(/\d+/))
-        console.log(positionSegmentX, positionSegmentY)
-        if((positionHeadX === positionSegmentX && positionHeadY === positionSegmentY)&&snakeArray.length>5){
-            
-                //console.log(`Collision detected with segment ${i}: (${positionSegmentX}, ${positionSegmentY})`);
+        //console.log(positionSegmentX, positionSegmentY)
+        if(positionHeadX != 25 && positionHeadX != 0 && ((positionHeadX === positionSegmentX && positionHeadY === positionSegmentY)&&snakeArray.length>5)){
+                console.log(snakeArray[i])
                 prepareResult(score, intervalBegin);
+                snakeArray[i].style.opacity = 0
+                //console.log(`Collision detected with segment ${i}: (${positionSegmentX}, ${positionSegmentY})`);
+                
                 break;
+        }
+        if(positionHeadY <= 0){
+            prepareResult(score, intervalBegin);
+            
+            //console.log(`Collision detected with segment ${i}: (${positionSegmentX}, ${positionSegmentY})`);
+            
+            break;
         }
     }
     

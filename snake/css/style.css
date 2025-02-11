@@ -5,6 +5,9 @@ html{
 	height: 100vh;
     
 }
+.river__up{
+	
+}
 
 body{
 	font-family: sans-serif;
@@ -197,7 +200,8 @@ h1{
 .snake__body{
 	transform: translate(0px,0px);
 	position: absolute;
-	transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out, opacity 1.5s;
+	
 	left: 175px;
 }
 
@@ -222,4 +226,13 @@ h1{
 .snake__body-crocodily--visible{
 	
 	background-color: blueviolet;
+}
+.river__up img{
+	transform: rotate(-90deg);
+	position: fixed;
+    transform-origin: top;
+    width: 75px;
+    height: 1390px;
+    left: 190px;
+    top: 10px;
 }
