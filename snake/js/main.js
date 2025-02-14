@@ -25,6 +25,7 @@ let incrementX = 25;
 let rotX, rotY;
 const leftBorder = -100;
 const rightBorder = 1300;
+const bottomBorder = 675;
 let positionXhead = 175;
 let positionYhead = 50;
 
@@ -95,14 +96,7 @@ function moveLeft(head){
     
     
 }
-function getRandomNumber(min, max) {
-    // Округляем min и max до ближайших значений, кратных 25
-    min = Math.ceil(min / 25) * 25; // Округляем вверх
-    max = Math.floor(max / 25) * 25; // Округляем вниз
-  
-    // Генерируем случайное число кратное 25
-    return Math.floor(Math.random() * ((max - min) / 25 + 1)) * 25 + min;
-}
+
 
 function setColor(element){
 	const color = getRandomColor();
@@ -138,17 +132,37 @@ const createSegment =(snakeHead)=>{
     //snakeHeadInner.append(newBodySegment, snakeSecond)
     
 }
+function getRandomNumber(min, max) {
+    // Округляем min и max до ближайших значений, кратных 25
+    min = Math.ceil(min / 25) * 25; // Округляем вверх
+    max = Math.floor(max / 25) * 25; // Округляем вниз
+  
+    // Генерируем случайное число кратное 25
+    return Math.floor(Math.random() * ((max - min) / 25 + 1)) * 25 + min;
+}
 function createRandomFood(){
 	flyMouseInner = document.createElement('div');
     flyMouse = document.createElement('img');
-    flyMouse.src="images/flyMouse.gif"
     
+    function getRandom1or2() {
+        return Math.floor(Math.random() * 2) + 1;  // Умножаем на 2 и добавляем 1
+    }
     
+    // Пример использования
+    const randomNum = getRandom1or2();
+    if(randomNum === 1){
+        flyMouse.src="images/flyMouse.gif"
+    }else{
+        flyMouse.src="images/apple.png"
+    }
 	const size = 25
 	const {width, height} = area.getBoundingClientRect();
 	X = getRandomNumber(0, width);
 	Y = getRandomNumber(0, height);
-	
+	Y = 25 + Y
+    if(Y >= 275){
+        Y = Y - 250
+    }
 	flyMouseInner.classList.add('food');
 	flyMouse.style.width =`${size}px`;
 	flyMouse.style.height =`${size}px`;
@@ -223,12 +237,12 @@ const examinationOnCollision=(positionHeadX, positionHeadY, score, intervalBegin
         if(positionHeadX != 25 && positionHeadX != 0 && ((positionHeadX === positionSegmentX && positionHeadY === positionSegmentY)&&snakeArray.length>5)){
                 console.log(snakeArray[i])
                 prepareResult(score, intervalBegin);
-                snakeArray[i].style.opacity = 0
+                snakeArray[i].style.background = 'red'
                 //console.log(`Collision detected with segment ${i}: (${positionSegmentX}, ${positionSegmentY})`);
                 
                 break;
         }
-        if(positionHeadY <= 0){
+        if(positionHeadY <= 0 || positionHeadY >= bottomBorder){
             prepareResult(score, intervalBegin);
             
             //console.log(`Collision detected with segment ${i}: (${positionSegmentX}, ${positionSegmentY})`);
