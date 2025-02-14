@@ -5,6 +5,9 @@ html{
 	height: 100vh;
     
 }
+.river__up{
+	
+}
 
 body{
 	font-family: sans-serif;
@@ -77,6 +80,14 @@ position: relative;
 	height: 25px;
 	position: absolute;
 }
+.food img{
+	width: 20px;
+	height: 20px;
+	position: static;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .sea{
 
 	min-height: 100vh;
@@ -124,7 +135,7 @@ position: relative;
 	top:0;
 	left:0;
 	z-index: 5;
-	position: absolute;
+	position: fixed;
 	background-color: rgba(0,0,0,0.8);
 	
 	display: block;
@@ -197,7 +208,8 @@ h1{
 .snake__body{
 	transform: translate(0px,0px);
 	position: absolute;
-	transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out, opacity 1.5s;
+	
 	left: 175px;
 }
 
@@ -222,4 +234,51 @@ h1{
 .snake__body-crocodily--visible{
 	
 	background-color: blueviolet;
+}
+.river__up img{
+	transform: rotate(-90deg);
+	position: absolute;
+    transform-origin: top;
+    width: 35px;
+    height: 1325px;
+    left: -75px;
+    top: 0px;
+}
+.bridge__item img{
+	transform: rotate(-270deg);
+	
+    transform-origin: top;
+    width: 125px;
+    height: 200px;
+}
+
+.bridge__item:nth-child(1) img{
+	
+    left: 140px;
+    top: 747px;
+}
+.bridge__item:nth-child(2) img{
+	
+    left: 360px;
+    top: 747px;
+}
+.bridge__item:nth-child(3) img{
+	
+    left: 580px;
+    top: 747px;
+}
+.bridge__item:nth-child(4) img{
+	
+    left: 800px;
+    top: 747px;
+}
+.bridge__item:nth-child(5) img{
+	
+    left: 1020px;
+    top: 747px;
+}
+.bridge__item:nth-child(6) img{
+	
+    left: 1240px;
+    top: 747px;
 }
