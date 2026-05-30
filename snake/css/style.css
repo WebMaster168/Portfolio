@@ -282,3 +282,225 @@ h1{
     left: 1240px;
     top: 747px;
 }
+
+
+/* =========================
+   АДАПТИВ
+========================= */
+
+:root{
+    --cell-size: 25px;
+}
+
+/* размеры змейки */
+.snake__segment,
+.snake__head,
+.snake__headWrapper,
+.food{
+    width: var(--cell-size);
+    height: var(--cell-size);
+}
+
+/* адаптив игрового поля */
+.area{
+    width: min(95vw, 1180px);
+    min-height: 100vh;
+}
+
+.area-wrapper{
+    width: 100%;
+    min-height: calc(100vh - 50px);
+}
+
+/* мобильные кнопки */
+.mobile-controls{
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-row{
+    display: flex;
+    gap: 10px;
+}
+
+.mobile-controls button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.8);
+}
+
+/* планшеты */
+
+
+/* ====================================
+   MOBILE & TABLET
+==================================== */
+
+
+
+
+@media(max-width: 768px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .area{
+        width: 100%;
+        position: relative;
+        min-height: 100vh;
+        max-width: none;
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    .water{
+        width: 100%;
+    }
+
+    .water img{
+        transform: rotate(0deg);
+        position: absolute;
+        transform-origin: top right; 
+        width: 54px;
+        height: 1325px;
+        right: 0px;
+        top: 63px;
+    }
+    .area-wrapper{
+        width: 100%;
+        min-height: calc(100vh - 20px);
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        border-radius: 12px;
+
+        border: 4px solid #ffffff;
+
+        outline: 3px solid rgba(0,0,0,.5);
+
+        outline-offset: -7px;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 0 0 2px rgba(0,0,0,.3),
+            0 0 20px rgba(255,255,255,.2);
+    }
+
+    /* скрываем декор */
+
+    .fence__inner,
+    .bridge__inner
+    {
+        display:none;
+    }
+
+    .snake__score{
+        top: 10px;
+        left: 10px;
+
+        font-size: 18px;
+
+        z-index: 50;
+    }
+
+    /* мобильные кнопки */
+
+    .mobile-controls{
+        position: fixed;
+
+        left: 50%;
+        bottom: 15px;
+
+        transform: translateX(-50%);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 10px;
+
+        z-index: 1000;
+    }
+
+    .mobile-row{
+        display:flex;
+        gap:10px;
+    }
+
+    .mobile-controls button{
+
+        width:60px;
+        height:60px;
+
+        border:none;
+        border-radius:50%;
+
+        font-size:24px;
+        font-weight:bold;
+
+        background:rgba(255,255,255,.9);
+
+        cursor:pointer;
+
+        box-shadow:
+            0 2px 10px rgba(0,0,0,.3);
+    }
+}
+
+/* ====================================
+   SMALL PHONES
+==================================== */
+
+@media(max-width: 480px){
+
+    .snake__score{
+        font-size:16px;
+    }
+
+    .mobile-controls button{
+        width:50px;
+        height:50px;
+        font-size:20px;
+    }
+
+    .area{
+        padding:5px;
+    }
+
+    .area-wrapper{
+        border-width:3px;
+    }
+}
+
+/* ====================================
+   VERY SMALL DEVICES
+==================================== */
+
+@media(max-width: 320px){
+
+    .snake__score{
+        font-size:14px;
+    }
+
+    .mobile-controls button{
+        width:42px;
+        height:42px;
+        font-size:16px;
+    }
+}

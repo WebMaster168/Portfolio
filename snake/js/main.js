@@ -1,4 +1,8 @@
 let area = document.querySelector('.area-wrapper');
+
+const isMobile = window.innerWidth <= 768;
+const CELL_SIZE = isMobile ? 18 : 25;
+
 let newBodySegment;
 let flyMouseInner;
 let flyMouse;
@@ -21,11 +25,14 @@ let snakeLength = snakeArray.length;
 let cycleGame = false;
 let positionX = 0;
 let positionY = 0;
-let incrementX = 25;
+let incrementX = CELL_SIZE;
 let rotX, rotY;
-const leftBorder = -100;
-const rightBorder = 1300;
-const bottomBorder = 675;
+const areaRect = area.getBoundingClientRect();
+const leftBorder = 0;
+const rightBorder = areaRect.width - CELL_SIZE;
+const bottomBorder = areaRect.height - CELL_SIZE;
+
+
 let positionXhead = 175;
 let positionYhead = 50;
 
@@ -64,7 +71,7 @@ let intervalHead;
 
 function moveDown(head){
     segmentHeadY = head.style.top
-    segmentHeadY = parseInt(segmentHeadY.match(/\d+/))
+    segmentHeadY = parseInt(segmentHeadY)
     segmentHeadY += 25
     head.style.top = `${segmentHeadY}px`;
     
@@ -72,13 +79,13 @@ function moveDown(head){
 
 function moveUp(head){
     segmentHeadY = head.style.top
-    segmentHeadY = parseInt(segmentHeadY.match(/\d+/))
+    segmentHeadY = parseInt(segmentHeadY)
     segmentHeadY -= 25
     head.style.top = `${segmentHeadY}px`;
 }
 function moveLeft(head){
     segmentHeadX = head.style.left
-    segmentHeadX = parseInt(segmentHeadX.match(/\d+/))
+    segmentHeadX = parseInt(segmentHeadX)
     segmentHeadX -= 25
     /*
     if(segmentHeadX <= 0){
@@ -108,7 +115,7 @@ function setColor(element){
 function moveRight(head, score){
     
     segmentHeadX = head.style.left 
-    segmentHeadX = parseInt(segmentHeadX.match(/\d+/))
+    segmentHeadX = parseInt(segmentHeadX)
     segmentHeadX += 25
     head.style.left = `${segmentHeadX}px`;
     //console.log(segmentHeadX, rightBorder)
@@ -223,35 +230,52 @@ const prepareResult = (score, intervalBegin) =>{
     cycleGame = false
     
 }
-const examinationOnCollision=(positionHeadX, positionHeadY, score, intervalBegin)=>{
-    positionHeadX = parseInt(positionHeadX.match(/\d+/))
-    positionHeadY = parseInt(positionHeadY.match(/\d+/))
-       
-    for(let i = 2; i < snakeArray.length; i++){
-         
-        let positionSegmentX = snakeArray[i].style.left
-        let positionSegmentY = snakeArray[i].style.top
-        positionSegmentX = parseInt(positionSegmentX.match(/\d+/))
-        positionSegmentY = parseInt(positionSegmentY.match(/\d+/))
-        //console.log(positionSegmentX, positionSegmentY)
-        if(positionHeadX != 25 && positionHeadX != 0 && ((positionHeadX === positionSegmentX && positionHeadY === positionSegmentY)&&snakeArray.length>5)){
-                console.log(snakeArray[i])
-                prepareResult(score, intervalBegin);
-                snakeArray[i].style.background = 'red'
-                //console.log(`Collision detected with segment ${i}: (${positionSegmentX}, ${positionSegmentY})`);
-                
-                break;
-        }
-        if(positionHeadY <= 0 || positionHeadY >= bottomBorder){
+const examinationOnCollision = (positionHeadX, positionHeadY, score, intervalBegin) => {
+
+    positionHeadX = parseInt(positionHeadX);
+    positionHeadY = parseInt(positionHeadY);
+
+    const areaRect = area.getBoundingClientRect();
+
+    const riverWidth = window.innerWidth <= 768 ? 40 : 0;
+
+    const rightBorder = areaRect.width - CELL_SIZE - riverWidth;
+    const bottomBorder = areaRect.height - CELL_SIZE;
+
+    // Проверка столкновения со стенами
+
+    if (
+        positionHeadX < 0 ||
+        positionHeadX > rightBorder ||
+        positionHeadY < 0 ||
+        positionHeadY > bottomBorder
+    ) {
+        prepareResult(score, intervalBegin);
+        return;
+    }
+
+    // Проверка столкновения с телом
+
+    for (let i = 2; i < snakeArray.length; i++) {
+
+        let positionSegmentX = parseInt(snakeArray[i].style.left);
+        let positionSegmentY = parseInt(snakeArray[i].style.top);
+
+        if (
+            positionHeadX === positionSegmentX &&
+            positionHeadY === positionSegmentY &&
+            snakeArray.length > 5
+        ) {
+
+            snakeArray[i].style.background = 'red';
+
             prepareResult(score, intervalBegin);
-            
-            //console.log(`Collision detected with segment ${i}: (${positionSegmentX}, ${positionSegmentY})`);
-            
-            break;
+
+            return;
         }
     }
-    
-}
+};
+
 
 const moveSnake = (score) => {
     if(!firstPause){
@@ -427,5 +451,38 @@ const initGame =() => {
 
 }
 btnStart.addEventListener('click', closeModal);
+
+/* =========================
+   MOBILE CONTROLS
+========================= */
+
+document
+.querySelectorAll('.mobile-controls button')
+.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        const dir = button.dataset.dir;
+
+        switch(dir){
+
+            case 'up':
+                keyPress = 'ArrowUp';
+                break;
+
+            case 'down':
+                keyPress = 'ArrowDown';
+                break;
+
+            case 'left':
+                keyPress = 'ArrowLeft';
+                break;
+
+            case 'right':
+                keyPress = 'ArrowRight';
+                break;
+        }
+    });
+});
 
 //overlay.addEventListener('click', closeModal);
